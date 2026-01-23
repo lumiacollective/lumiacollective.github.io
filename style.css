@@ -354,38 +354,6 @@ header nav a:hover::after {
   z-index: 5; /* üstte görünmesi için */
 }
 
-/* MOBİL WORKS DÜZENİ */
-@media (max-width: 900px) {
-  /* Works grid 2 sütun */
-  .works {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 sütun kareler için */
-    gap: 12px;
-    padding: 80px 20px 100px;
-  }
-
-  /* Kare görseller */
-  .works .work.square {
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-
-  /* Yatay görseller 2 sütun genişliğinde */
-  .works .work.horizontal {
-    grid-column: span 2; /* 2 sütun kapla */
-    width: 100%;
-    aspect-ratio: 2/1; /* karelerin iki katı genişlik */
-  }
-
-  /* Preloader mobilde gizle */
-  #preloader {
-    display: none !important;
-  }
-  .preloader-logo {
-    animation: none !important;
-  }
-}
-
 /* WORKSHOPS */
 .workshops { padding: 80px 0 160px; text-align: center; }
 .workshops h2 { font-size: 26px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: #222; margin-bottom: 70px; position: relative; }
@@ -490,14 +458,6 @@ body.loaded #preloader {
   mix-blend-mode: multiply;
   z-index: 9999;
 }
-@media(max-width:900px) {
-  #preloader {
-    display: none !important; /* preloader tamamen gizlensin */
-  }
-  .preloader-logo {
-    animation: none !important; /* animasyonu durdur */
-  }
-}
 
 @keyframes inkSpread {
   from {
@@ -507,5 +467,36 @@ body.loaded #preloader {
   to {
     transform: scale(2.5);
     opacity: 0;
+  }
+}
+/* MOBİL WORKS DÜZENİ */
+@media (max-width: 900px) {
+  /* Works grid 2 sütun */
+  .works {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 sütun kareler için */
+    gap: 12px;
+    padding: 80px 20px 100px;
+  }
+
+  /* Kare görseller */
+  .works .work.square {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  /* Yatay görseller 2 sütun genişliğinde */
+  .works .work.horizontal {
+    grid-column: span 2; /* 2 sütun kapla */
+    width: 100%;
+    aspect-ratio: 2/1; /* karelerin iki katı genişlik */
+  }
+
+  /* Preloader mobilde gizle */
+  #preloader {
+    display: none !important;
+  }
+  .preloader-logo {
+    animation: none !important;
   }
 }
