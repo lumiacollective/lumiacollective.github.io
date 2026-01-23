@@ -43,6 +43,18 @@ body {
   animation: spin 5s linear infinite; /* sayfa yüklenirken dönsün */
 }
 
+/* MOBİLDE PRELOADER'ı KALDIR */
+@media(max-width:900px) {
+  #preloader {
+    display: none !important; /* Mobilde tamamen gizle */
+  }
+
+  .preloader-logo {
+    animation: none !important; /* animasyonu durdur (gerekirse) */
+  }
+}
+
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -445,6 +457,14 @@ body.loaded #preloader {
   animation: inkSpread 1.6s ease-out forwards;
   mix-blend-mode: multiply;
   z-index: 9999;
+}
+@media(max-width:900px) {
+  #preloader {
+    display: none !important; /* preloader tamamen gizlensin */
+  }
+  .preloader-logo {
+    animation: none !important; /* animasyonu durdur */
+  }
 }
 
 @keyframes inkSpread {
