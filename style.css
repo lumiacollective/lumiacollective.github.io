@@ -139,16 +139,90 @@ header nav a:hover::after {
   color: #555;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px) {
-  .hero-image-area {
-    height: 50vh; /* mobilde yükseklik %50 viewport */
-  }
-   .hero-image-area img {
-    height: 100%; /* container boyuna uysun */
-    object-fit: cover; 
-  }
+/* HERO */
+.hero {
+  width: 100%;
+  background: #ffffff;
 }
+
+.hero-text-area {
+  text-align: center;
+  padding: 10px 20px 60px;
+}
+.hero-text-area h1 {
+  font-size: 52px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.hero-text-area p {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.hero-image-area {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+  margin-top: -40px;
+}
+.hero-image-area img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.hero-detail-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  transform: translateX(-50%);
+  padding: 14px 26px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 40px;
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease,
+    letter-spacing 0.4s ease,
+    box-shadow 0.5s ease;
+}
+.hero-detail-btn::after {
+  content: "→";
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+.hero-detail-btn:hover {
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(0,0,0,0.45);
+  letter-spacing: 4px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.hero-detail-btn:hover::after {
+  transform: translateX(6px);
+}
+@keyframes floatSoft {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-4px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+.hero-detail-btn {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+/* RESPONSIVE / MOBİL */
+@media(max-width:900px) {
+
+  /* HEADER */
   header {
     padding: 20px 30px;
   }
@@ -157,103 +231,105 @@ header nav a:hover::after {
     font-size: 14px;
   }
 
+  /* HERO */
+  .hero-text-area h1 {
+    font-size: 38px;
+  }
+  .hero-image-area {
+    height: 50vh;
+  }
+  .hero-image-area img {
+    height: 100%;
+    object-fit: cover;
+  }
+/* RESPONSIVE MOBİL DÜZENLEME */
+@media(max-width: 900px) {
 
-.hero {
-  width: 100%;
-  background: #ffffff;
+  /* HEADER */
+  header {
+    padding: 20px 30px;
+  }
+  .main-nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero-text-area h1 {
+    font-size: 38px;
+  }
+
+  .hero-image-area {
+    height: 50vh; /* mobilde yükseklik %50 viewport */
+  }
+  .hero-image-area img {
+    height: 100%; /* container boyuna uysun */
+    object-fit: cover; 
+  }
+  .works {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 100px 20px 60px;
+  }
+
+  .works .work.horizontal {
+    grid-column: span 2;
+    width: 100%;
+  }
+
+  .works .work.square {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
 }
 
-/* ÜST YAZI */
-.hero-text-area {
-  text-align: center;
-  padding: 10px 20px 60px;
+  /* WORKS GRID MOBİL */
+  .works {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kare yan yana */
+    gap: 12px;
+    padding: 100px 20px 60px;
+  }
+
+  .works .work.horizontal {
+    grid-column: span 2; /* yatay görseller tek satır */
+    width: 100%;
+  }
+
+  .works .work.square {
+    width: 100%;
+    aspect-ratio: 1/1; /* kare format */
+  }
 }
 
-.hero-text-area h1 {
-  font-size: 52px;
-  font-weight: 400;
-  margin-bottom: 12px;
+  /* WORKS */
+  .works {
+    grid-template-columns: repeat(2, 1fr); /* 2 sütun mobilde */
+    gap: 16px;
+    padding: 80px 20px 100px;
+  }
+  .work.horizontal {
+    grid-column: span 2; /* yatay geniş olan tek satır */
+  }
+
+  /* WORKSHOPS */
+  .workshops-stack {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  .workshops-stack .work {
+    flex: 0 0 45%; /* 2 tane yan yana */
+    margin-left: 0;
+    opacity: 1;
+  }
+  .workshops-stack:hover .work:not(:hover) {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
 }
-
-.hero-text-area p {
-  font-size: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #666;
-}
-
-/* HERO GÖRSEL */
-.hero-image-area {
-  position: relative; /* 👈 şart */
-  height: 50vh;
-  overflow: hidden;
-  margin-top: -40px;
-}
-
-
-.hero-image-area img {
-  width: 100%;
-  height: 70%;
-  object-fit: cover; /* kadraj bozulmadan sığar */
-}
-
-.hero-detail-btn {
-  position: absolute;
-  left: 50%;
-  bottom: 54px;
-  transform: translateX(-50%);
-
-  padding: 14px 26px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-
-  color: #fff;
-  text-decoration: none;
-
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 40px;
-
-  transition:
-    transform 0.5s ease,
-    background 0.5s ease,
-    letter-spacing 0.4s ease,
-    box-shadow 0.5s ease;
-}
-
-.hero-detail-btn::after {
-  content: "→";
-  margin-left: 8px;
-  display: inline-block;
-  transition: transform 0.4s ease;
-}
-
-.hero-detail-btn:hover {
-  transform: translateX(-50%) translateY(-6px);
-  background: rgba(0,0,0,0.45);
-  letter-spacing: 4px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-
-.hero-detail-btn:hover::after {
-  transform: translateX(6px);
-}
-
-@keyframes floatSoft {
-  0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-4px); }
-  100% { transform: translateX(-50%) translateY(0); }
-}
-
-.hero-detail-btn {
-  animation: floatSoft 5s ease-in-out infinite;
-  
-}
-
 .close-modal {
   position: absolute;
   top: 16px;
