@@ -141,6 +141,14 @@ header nav a:hover::after {
 
 /* RESPONSIVE */
 @media(max-width:900px) {
+  .hero-image-area {
+    height: 50vh; /* mobilde yükseklik %50 viewport */
+  }
+   .hero-image-area img {
+    height: 100%; /* container boyuna uysun */
+    object-fit: cover; 
+  }
+}
   header {
     padding: 20px 30px;
   }
@@ -148,7 +156,7 @@ header nav a:hover::after {
     gap: 20px;
     font-size: 14px;
   }
-}
+
 
 .hero {
   width: 100%;
