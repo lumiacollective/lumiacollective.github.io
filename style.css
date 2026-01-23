@@ -43,35 +43,24 @@ body {
   animation: spin 5s linear infinite; /* sayfa yüklenirken dönsün */
 }
 
-/* MOBİLDE PRELOADER'ı KALDIR */
-@media(max-width:900px) {
+@media (max-width: 900px) {
   #preloader {
     display: none !important; /* Mobilde tamamen gizle */
   }
+}
+
 
   .preloader-logo {
     animation: none !important; /* animasyonu durdur (gerekirse) */
   }
-}
 
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Sayfa yüklendiğinde preloader kaybolur */
-body.loaded #preloader {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.logo {
+ .logo {
   width: 40px;
+   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+  animation: spin 5s linear infinite; /* 5 saniyede bir dönsün */
 }
-.logo {
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
-}
+
 /* HEADER */
 header {
   position: fixed;
