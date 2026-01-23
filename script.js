@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = heroModal.querySelectorAll('.slide');
     let slideIndex = 0;
 
-    const showSlide = (n) => {
+    const showSlide = n => {
       slides.forEach(s => s.style.display = 'none');
       slides[n].style.display = 'block';
     };
@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       e.preventDefault();
-      document.querySelector(anchor.getAttribute('href'))?.scrollIntoView({
-        behavior: 'smooth'
-      });
+      document.querySelector(anchor.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
@@ -64,91 +62,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (worksTitle && worksSection) {
     window.addEventListener('scroll', () => {
-      worksTitle.classList.toggle(
-        'is-fading',
-        window.scrollY - worksSection.offsetTop > 300
-      );
+      worksTitle.classList.toggle('is-fading', window.scrollY - worksSection.offsetTop > 300);
     });
   }
-  document.addEventListener('click', (e) => {
 
-  // Header / link tıklamalarında aşırı boya istemiyorsan:
-  if (e.target.closest('a, button, nav')) return;
+  // WATERCOLOUR DROPS ON CLICK
+  document.addEventListener('click', e => {
+    if (e.target.closest('a, button, nav')) return;
 
-  const colors = [
-    'rgba(220, 70, 90, 0.35)',   // kırmızımsı
-    'rgba(60, 120, 200, 0.35)', // mavi
-    'rgba(240, 180, 70, 0.35)', // sarı
-    'rgba(80, 170, 130, 0.35)', // yeşil
-    'rgba(160, 90, 200, 0.35)'  // mor
-  ];
+    const colors = [
+      'rgba(220,70,90,0.35)',
+      'rgba(60,120,200,0.35)',
+      'rgba(240,180,70,0.35)',
+      'rgba(80,170,130,0.35)',
+      'rgba(160,90,200,0.35)'
+    ];
 
-  const drops = Math.floor(Math.random() * 3) + 2; // 2–4 damla
+    const drops = Math.floor(Math.random() * 3) + 2;
 
-  for (let i = 0; i < drops; i++) {
-    const drop = document.createElement('div');
-    drop.className = 'watercolor';
-
-    const size = Math.random() * 100 + 80;
-    drop.style.width = size + 'px';
-    drop.style.height = size + 'px';
-
-    drop.style.left = (e.clientX + Math.random() * 80 - 40) + 'px';
-    drop.style.top  = (e.clientY + Math.random() * 80 - 40) + 'px';
-
-    drop.style.backgroundColor =
-      colors[Math.floor(Math.random() * colors.length)];
-
-    document.body.appendChild(drop);
-    setTimeout(() => drop.remove(), 2400);
-  }
-});
-const works = document.querySelectorAll('.works .work');
-
-works.forEach(work => {
-  work.addEventListener('mousemove', e => {
-    const rect = work.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const dx = (x - cx) / cx; // -1 ile 1 arasında
-    const dy = (y - cy) / cy; // -1 ile 1 arasında
-    work.style.transform = `translateY(-6px) scale(1.03) rotateX(${dy * 3}deg) rotateY(${dx * 3}deg)`;
-  });
-
-  work.addEventListener('mouseleave', () => {
-    work.style.transform = '';
-  });
-});
-
-// LOGO INK EFFECT
-const logo = document.querySelector('.logo-container');
-
-if (logo) {
-  logo.style.cursor = 'pointer';
-
-  logo.addEventListener('click', (e) => {
-    for (let i = 0; i < 3; i++) {
-      const ink = document.createElement('div');
-      ink.className = 'ink';
-
-      ink.style.left = (e.clientX + Math.random() * 60 - 30) + 'px';
-      ink.style.top  = (e.clientY + Math.random() * 60 - 30) + 'px';
-
-      document.body.appendChild(ink);
-      setTimeout(() => ink.remove(), 1600);
+    for (let i = 0; i < drops; i++) {
+      const drop = document.createElement('div');
+      drop.className = 'watercolor';
+      const size = Math.random() * 100 + 80;
+      drop.style.width = drop.style.height = size + 'px';
+      drop.style.left = (e.clientX + Math.random() * 80 - 40) + 'px';
+      drop.style.top  = (e.clientY + Math.random() * 80 - 40) + 'px';
+      drop.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(drop);
+      setTimeout(() => drop.remove(), 2400);
     }
   });
-}
+
+  // WORKS HOVER EFFECT
+  document.querySelectorAll('.works .work').forEach(work => {
+    work.addEventListener('mousemove', e => {
+      const rect = work.getBoundingClientRect();
+      const dx = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+      const dy = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+      work.style.transform = `translateY(-6px) scale(1.03) rotateX(${dy * 3}deg) rotateY(${dx * 3}deg)`;
+    });
+    work.addEventListener('mouseleave', () => work.style.transform = '');
+  });
+
+  // LOGO INK EFFECT
+  const logo = document.querySelector('.logo-container');
+  if (logo) {
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', e => {
+      for (let i = 0; i < 3; i++) {
+        const ink = document.createElement('div');
+        ink.className = 'ink';
+        ink.style.left = (e.clientX + Math.random() * 60 - 30) + 'px';
+        ink.style.top  = (e.clientY + Math.random() * 60 - 30) + 'px';
+        document.body.appendChild(ink);
+        setTimeout(() => ink.remove(), 1600);
+      }
+      window.addEventListener('load', () => {
+  document.body.classList.add('loaded'); // body'ye "loaded" ekle
+});
+
+    });
+  }
 
   // ABOUT CURSOR TRACE
   const about = document.querySelector('.about');
   const trace = document.querySelector('.cursor-trace');
 
   if (about && trace) {
-    let tx = 0, ty = 0, cx = 0, cy = 0;
-
+     let tx = 0, ty = 0, cx = 0, cy = 0;
     about.addEventListener('mouseenter', () => trace.style.opacity = 1);
     about.addEventListener('mouseleave', () => trace.style.opacity = 0);
     about.addEventListener('mousemove', e => {
@@ -156,8 +137,7 @@ if (logo) {
       tx = e.clientX - r.left;
       ty = e.clientY - r.top;
     });
-
-    (function animate() {
+     (function animate() {
       cx += (tx - cx) * 0.08;
       cy += (ty - cy) * 0.08;
       trace.style.left = cx + 'px';
@@ -165,6 +145,5 @@ if (logo) {
       requestAnimationFrame(animate);
     })();
   }
-  
 
 });

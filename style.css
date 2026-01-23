@@ -24,15 +24,8 @@ body {
 
 .logo-container:hover {
   transform: translateY(-1px);
-  opacity: 0.85;
-}
-
-.logo {
-  width: 40px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
-  animation: spin 5s linear infinite;
-}
-
+  opacity: 0.85;}
+  
 .logo-text {
   font-size: 20px;
   font-weight: 500;
@@ -53,7 +46,25 @@ body {
 
 .preloader-logo {
   width: 80px;
-  animation: spin 5s linear infinite;
+  animation: spin 3s linear infinite; /* sayfa yüklenirken dönsün */
+}
+
+/* Sayfa yüklendiğinde preloader kaybolur ve logo animasyonu durur */
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.loaded .preloader-logo {
+  animation: none;
+}
+
+/* Ana logo header'da dönmeyecek */
+.logo {
+  width: 40px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+  animation: none;
 }
 
 /* HEADER */
