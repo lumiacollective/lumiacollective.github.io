@@ -171,48 +171,37 @@ header nav a:hover::after {
   object-fit: cover;
 }
 
+
 .hero-detail-btn {
   position: absolute;
-  left: 50%;
+  right: 60px;
   bottom: 54px;
-  transform: translateX(-50%);
-  padding: 14px 26px;
+
+  padding: 14px 28px;
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 40px;
-  transition: transform 0.5s ease, background 0.5s ease, letter-spacing 0.4s ease, box-shadow 0.5s ease;
-  animation: floatSoft 5s ease-in-out infinite;
-}
 
-.hero-detail-btn::after {
-  content: "→";
-  margin-left: 8px;
-  display: inline-block;
-  transition: transform 0.4s ease;
+  color: #222;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 40px;
+
+  opacity: 0.9;
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              letter-spacing 0.3s ease;
 }
 
 .hero-detail-btn:hover {
-  transform: translateX(-50%) translateY(-6px);
-  background: rgba(0,0,0,0.45);
+  transform: translateY(-3px);
   letter-spacing: 4px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
-
-.hero-detail-btn:hover::after {
-  transform: translateX(6px);
-}
-
-@keyframes floatSoft {
-  0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-4px); }
-  100% { transform: translateX(-50%) translateY(0); }
-} 
 
 /* =========================
    WORKSHOPS
@@ -247,50 +236,23 @@ header nav a:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 60px;
-<<<<<<< HEAD
->>>>>>> f1df605 (Web düzeni güncellendi)
-}
-=======
+   padding: 0 60px;
   flex-wrap: nowrap;
   overflow-x: visible;
- }
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
+}
 
 .workshops-stack .work {
-   flex: 0 0 240px;
-  margin-left: -70px;
-  opacity: 0.5;
-  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
-<<<<<<< HEAD
-=======
+  flex: 0 0 240px;
   margin-left: -80px;
   opacity: 0.45;
   transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
->>>>>>> f1df605 (Web düzeni güncellendi)
-}
-=======
+
  }
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
-
+ 
 .workshops-stack .work:first-child {
-   margin-left: 0;
-}
-
-.workshops-stack .work img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  margin-left: 0;
 }
  
-.workshops-stack .work:hover {
-<<<<<<< HEAD
-  transform: scale(1.15);
-=======
-}
-
 .workshops-stack .work img {
   width: 100%;
   height: 340px;
@@ -301,53 +263,32 @@ header nav a:hover::after {
 
 /* HOVER DAVRANIŞI */
 .workshops-stack .work:hover {
-  transform: scale(1.18);
->>>>>>> f1df605 (Web düzeni güncellendi)
-=======
-   transform: scale(1.15);
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
+   transform: scale(1.18);
   opacity: 1;
   z-index: 10;
 }
 
 .workshops-stack:hover .work:not(:hover) {
-   opacity: 0.25;
-  filter: blur(1px);
-  transform: scale(0.92);
-<<<<<<< HEAD
-=======
   opacity: 0.22;
   filter: blur(1.2px);
   transform: scale(0.9);
->>>>>>> f1df605 (Web düzeni güncellendi)
+}
+
+/* ... devam eden tüm CSS kodları aynı şekilde ... */
+
+.workshops-stack:hover .work:not(:hover) {
+   opacity: 0.25;
+  filter: blur(1px);
+  transform: scale(0.92);
 }
 
 
-@media (max-width: 900px) {
-  .workshops-stack {
-    padding: 0 16px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    gap: 0; /* margin yerine gap ile daha stabil scroll */
-  }
-
-  .workshops-stack .work {
-    flex: 0 0 calc(50% + 20px); /* ekranın yarısı + overlap için */
-    margin-left: -20px;          /* overlap azaltıldı */
-    opacity: 0.6;
-  }
-
-  .workshops-stack .work:first-child {
-    margin-left: 0;
-  }
-
-  .workshops-stack .work img {
-    height: 280px;
-  }
+  .workshops-stack:hover .work:not(:hover) {
+  opacity: 0.22;
+  filter: blur(1.2px);
+  transform: scale(0.9);
 }
-/* =========================
-   MOBİL (900px altı) – overlap / scroll efekt
-========================= */
+
 @media (max-width: 900px) {
   .workshops-stack {
     padding: 0 16px;
@@ -400,80 +341,103 @@ header nav a:hover::after {
     text-align: center;
     font-size: 26px;
     margin: 120px auto 60px;
-  }
-=======
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
+   }
 }
 
 /* =========================
    WORKS GRID – WEB (900px+)
 ========================= */
 @media (min-width: 900px) {
-
-  .works-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    margin: 140px auto 80px;
-  }
-
-  .works {
+   .works {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px; /* görseller arası net boşluk */
-    max-width: 1400px;
+    gap: 40px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 150px 60px 160px;
+    padding: 110px 60px 160px;
   }
 
-  /* ORTAK WORK KUTUSU */
-  .work {
-    position: relative;
-    overflow: hidden;
-    border-radius: 14px;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  .works-title {
+    position: sticky;
+    top: 120px;
+    grid-column: 1 / -1;
+
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+    color: #222;
+    opacity: 0.6;
+    z-index: 50;
+    pointer-events: none;
+
+    background: none;
+    backdrop-filter: blur(6px);
+
+    transition: opacity 0.3s ease-out;
   }
 
-  /* KARE */
-  .work.square {
-    aspect-ratio: 1 / 1;
+  .works-title.is-fading {
+    opacity: 0;
   }
 
-  /* HORIZONTAL – 2 tane yan yana */
-  .work.horizontal {
-    aspect-ratio: 2 / 1;
-    grid-column: span 2;
-  }
-
-  .work img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .works-title::after {
+    content: "";
     display: block;
-  }
-
-  /* HOVER */
-  .work:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.18);
-    z-index: 5;
+    width: 60px;
+    height: 1px;
+    background: rgba(0,0,0,0.25);
+    margin: 24px auto 0;
   }
 }
+ 
+/* ORTAK WORK KUTUSU */
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-  /* Meta bilgiler */
-  .work-meta {
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
+/* KARE */
+.work.square {
+  aspect-ratio: 1 / 1;
+}
 
-  .work:hover .work-meta {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* HORIZONTAL – 2 tane yan yana */
+.work.horizontal {
+  aspect-ratio: 2 / 1;
+  grid-column: span 2;
+}
 
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
+/* HOVER */
+.work:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+  z-index: 5;
+}
+
+/* Meta bilgiler */
+.work-meta {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.work:hover .work-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+ 
 /* =========================
    ABOUT
 ========================= */
@@ -593,45 +557,40 @@ footer span {
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-
-  /* HEADER */
-  header { padding: 20px 30px; }
+   header { padding: 20px 30px; }
   .main-nav { gap: 20px; font-size: 14px; }
-=======
 
-  /* HEADER */
-  header { padding:20px 30px; }
-  .main-nav { gap: 20px; font-size:14px; }
->>>>>>> f1df605 (Web düzeni güncellendi)
-
-  /* HERO */
-<<<<<<< HEAD
   .hero-text-area h1 { font-size: 38px; }
   .hero-image-area { height: 50vh; }
   .hero-image-area img { height: 100%; object-fit: cover; }
-<<<<<<< HEAD
- }
-/* ===================== */
-#preloader { display:none !important; }
-.preloader-logo { animation:none !important; }
-=======
-  .hero-text-area h1 { font-size:38px; }
-  .hero-image-area { height:50vh; }
-  .hero-image-area img { height:100%; object-fit:cover; }
 
-  /* WORKS */
-=======
- 
-  /* WORKS GRID */
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
   .works {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     padding: 80px 16px 100px;
   }
+}
 
-<<<<<<< HEAD
+@media (max-width: 900px) {
+
+  /* HEADER */
+  header { padding: 20px 30px; }
+  .main-nav { gap: 20px; font-size: 14px; }
+ 
+  /* HERO */
+   .hero-text-area h1 { font-size: 38px; }
+  .hero-image-area { height: 50vh; }
+  .hero-image-area img { height: 100%; object-fit: cover; }
+
+  /* WORKS GRID */
+   .works {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 80px 16px 100px;
+  }
+ 
   /* GRID AREAS */
   .w1 { grid-area: w1; }
   .w2 { grid-area: w2; }
@@ -645,20 +604,7 @@ footer span {
   .w10 { grid-area: w10; }
   .w11 { grid-area: w11; }
   .w12 { grid-area: w12; }
->>>>>>> 00ad38f (Web düzeni güncellendi)
 
-/* ===================== */
-/* ABOUT MOBİL AYAR */
-/* ===================== */
-.about {
-  font-size: 16px;
-  line-height: 1.5;
-  padding: 60px 16px;
-  opacity: 0.75;
-}
-<<<<<<< HEAD
-@media (max-width: 900px) {
-=======
   .work.square, .work.horizontal {
     aspect-ratio: 1 / 1;
   }
@@ -682,31 +628,27 @@ footer span {
     display: block;
     margin: 0 auto;
   }
-<<<<<<< HEAD
-}
-<<<<<<< HEAD
 
-/* =========================
-   WORKS – MOBİL NET GRID
-   ========================= */
-@media (max-width: 900px) {
-=======
-=======
-
->>>>>>> f1df605 (Web düzeni güncellendi)
   /* WORKSHOPS */
-  .workshops-stack { padding:0 20px; flex-wrap:wrap; gap:16px; justify-content:center; }
-  .workshops-stack .work { flex:0 0 45%; margin-left:0; opacity:1; }
- .workshops-stack .work:hover {
+  .workshops-stack { 
+    padding: 0 20px; 
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: center; 
+  }
+  .workshops-stack .work { 
+    flex: 0 0 45%; 
+    margin-left: 0; 
+    opacity: 1; 
+  }
+  .workshops-stack .work:hover {
     transform: translateY(-6px) scale(1.03);
   }
-  /* WORKSHOPS – MOBİL */
-@media (max-width: 768px) {
-=======
+}
 
-  /* WORKSHOPS STACK - MOBİL */
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
-  .workshops-stack {
+/* WORKSHOPS STACK - MOBİL */
+@media (max-width: 768px) {
+   .workshops-stack {
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
@@ -724,69 +666,11 @@ footer span {
     transform: translateY(-6px) scale(1.03);
   }
 
-}
-<<<<<<< HEAD
-
-  /* PRELOADER */
-  #preloader { display:none !important; }
-  .preloader-logo { animation:none !important; }
->>>>>>> 00ad38f (Web düzeni güncellendi)
+   .hero-detail-btn {
+    transform: translateX(-50%) scale(0.95);
+  }
 
   .works {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-<<<<<<< HEAD
-  .work {
-    margin: 0;
-  }
-
-  /* KARELER */
-  .work.square {
-    aspect-ratio: 1 / 1;
-  }
-  /* Dikdörtgenler */
-  .work.rectangle {
-    grid-column: 1 / -1; /* tüm satırı kaplasın */
-    aspect-ratio: 3 / 1; /* yüksekliğe göre orantı */
-  }
-  .work.square img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* YATAYLAR */
-  .work.horizontal {
-    grid-column: 1 / -1; /* 2 kare genişliği */
-    aspect-ratio: 3 / 1;
-  }
-
- .work.horizontal img {
-  height: 200px;
-  max-width: 100%;
-  object-fit: cover;
-}
-
-
-}.works-title {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 300;
-  letter-spacing: 4px;
-  margin: 140px auto 80px;
-=======
-/* WORKS – MOBİL (768px altı) */
-=======
- 
-/* =========================
-   RESPONSIVE 768px altı
-========================= */
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
-@media (max-width: 768px) {
- .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
@@ -800,14 +684,24 @@ footer span {
     border-radius: 8px;
   }
 
-  .about { font-size: 14px; padding: 20px 16px; margin: 80px auto 15px; }
-  .contact { font-size: 13px; padding: 15px 10px 80px; }
-  footer { font-size: 13px; padding: 15px 10px; }
-  
+  .about { 
+    font-size: 14px; 
+    padding: 20px 16px; 
+    margin: 80px auto 15px; 
+  }
+  .contact { 
+    font-size: 13px; 
+    padding: 15px 10px 80px; 
+  }
+  footer { 
+    font-size: 13px; 
+    padding: 15px 10px; 
+  }
+
   #preloader { display: none !important; }
-  .preloader-logo { animation: none !important; }
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
+   .preloader-logo { animation: none !important; }
 }
+
 /* MOBİL – LOGO SADECE SAYFA YÜKLENİRKEN GÖRÜNSÜN */
 @media (max-width: 768px) {
   .intro-logo {
@@ -817,22 +711,16 @@ footer span {
 
   .logo-container {
     position: static !important;
+     transition: opacity 0.5s ease;
   }
-}
 
-@media (max-width: 768px) {
-  .logo-container {
-    transition: opacity 0.5s ease;
-  }
-}
-
-@media (max-width: 768px) {
-  .preloader-logo,
+   .preloader-logo,
   .logo {
     animation: none !important;
     transform: none !important;
   }
 }
+
 /* ABOUT – CONTACT ARASI MESAFE (KESİN) */
 .about {
   max-width: 647px;
@@ -842,7 +730,7 @@ footer span {
   columns: 1;
   column-gap: 80px;
 
-  text-align: center; /* ⬅️ MERKEZLİ HİS */
+  text-align: center;
 }
 
 .contact {
