@@ -218,6 +218,17 @@ header nav a:hover::after {
     grid-template-columns: repeat(4, 1fr);
     gap: 36px;
   }
+/* ========================
+   WORKS TITLE – ORTALA
+   ======================== */
+
+.works-title {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0 auto 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
   /* KARELER */
   .work.square {
