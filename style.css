@@ -493,24 +493,27 @@ footer {
 
 /* RESPONSIVE - MOBİL */
 @media (max-width: 900px) {
-
-  /* HEADER */
-  header { padding:20px 30px; }
-  .main-nav { gap: 20px; font-size:14px; }
+   /* HEADER */
+  header { padding: 20px 30px; }
+  .main-nav { gap: 20px; font-size: 14px; }
 
   /* HERO */
-  .hero-text-area h1 { font-size:38px; }
-  .hero-image-area { height:50vh; }
-  .hero-image-area img { height:100%; object-fit:cover; }
+  .hero-text-area h1 { font-size: 38px; }
+  .hero-image-area { height: 50vh; }
+  .hero-image-area img { height: 100%; object-fit: cover; }
+}
 
-
- /* ATÖLYELER – ESKİ DÜZEN (üst üste binmiş) */
+/* ===================== */
+/* ATÖLYELER – MOBİL DÜZEN */
+/* ===================== */
 @media (max-width: 900px) {
   .workshops-stack {
-    flex-wrap: nowrap;  /* wrap’i kapatıyoruz, üst üste binme için */
+    display: flex;
     flex-direction: column;
-    gap: 0; /* üst üste biner gibi boşluğu kaldır */
+    flex-wrap: nowrap; /* üst üste binme için wrap kapalı */
+    gap: 0;
   }
+
   .workshops-stack .work {
     margin-left: 0;
     margin-bottom: -60px; /* üst üste binme efekti */
@@ -519,22 +522,29 @@ footer {
   }
 }
 
+/* ===================== */
+/* PRELOADER */
+/* ===================== */
+#preloader { display:none !important; }
+.preloader-logo { animation:none !important; }
 
-  /* PRELOADER */
-  #preloader { display:none !important; }
-  .preloader-logo { animation:none !important; }
+/* ===================== */
+/* ABOUT MOBİL AYAR */
+/* ===================== */
+.about {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 60px 16px;
+  opacity: 0.75;
+}
 
- .about {
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 60px 16px;
-    opacity: 0.75;
-  }
-
+/* ===================== */
+/* WORKS – MOBİL GRID */
+/* ===================== */
 @media (max-width: 768px) {
   .works {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2 kolon */
     gap: 10px;
     padding: 50px 14px 70px;
     grid-template-areas:
@@ -548,14 +558,18 @@ footer {
       "w12 w12";
   }
 
+  /* Kare görseller */
+  .work.square img { aspect-ratio: 1 / 1; }
+
+  /* Yatay görseller */
+  .work.horizontal { grid-column: span 2; }
+  .work.horizontal img { aspect-ratio: 3 / 1; }
+
+  /* Tüm görseller */
   .works .work img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
   }
-
-  .work.horizontal { grid-column: span 2; }
-  .work.square img { aspect-ratio: 1/1; }
-  .work.horizontal img { aspect-ratio: 3/1; }
-}
+ }
