@@ -474,14 +474,7 @@ footer span {
   }
 }
 
-/* MOBİL */
-@media (max-width: 900px) {
-  footer {
-    font-size: 12px;   /* daha küçük yazı */
-    gap: 10px;         /* biraz daha geniş aralık */
-    padding: 20px 16px;
-  }
-}
+
 
 /* IMAGE ZOOM */
 .image-overlay {
