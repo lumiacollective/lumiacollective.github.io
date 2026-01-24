@@ -204,141 +204,130 @@ header nav a:hover::after {
   50% { transform: translateX(-50%) translateY(-4px); }
   100% { transform: translateX(-50%) translateY(0); }
 }
-/* ===================== */
 /* ========================
-   WORKS – GRID & GÖRSELLER
+/* ========================
+   WORKS – TEK KAYNAK
+   WEB: ESKİ DÜZEN
+   MOBİL: YENİ DÜZEN
    ======================== */
 
-/* GRID CONTAINER */
+/* -------- MOBİL (varsayılan) -------- */
 .works {
+  padding: 100px 16px 140px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 kolon */
-  gap: 10px;
-  grid-auto-rows: 100px; /* temel satır yüksekliği */
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  grid-auto-rows: 180px; /* kareler daha uzun */
 }
 
-/* TEK GÖRSEL */
 .work {
   position: relative;
   overflow: hidden;
-  margin: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform, box-shadow;
 }
 
-/* GÖRSEL */
 .work img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* HOVER EFEKTI */
-.work:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  z-index: 5;
+/* KARE – mobilde iri */
+.work.square {
+  grid-row: span 2;
+}
+.work.square img {
+  aspect-ratio: 1 / 1;
 }
 
-/* KARE VE YATAY GÖRSELLER */
-.work.square img { aspect-ratio: 1 / 1; }
+/* YATAY – mobilde kenarlardan boşluklu */
 .work.horizontal {
-  grid-column: span 2; /* yatay görsel 2 kolon kaplasın */
-  grid-row: span 2;    /* 2 satır yüksekliğinde */
+  grid-column: span 2;
+  grid-row: span 2;
+  margin: 0 10px; /* 👈 ekrana yapışmasın */
 }
-.work.horizontal img { aspect-ratio: 3 / 1; }
+.work.horizontal img {
+  aspect-ratio: 3 / 1;
+}
 
-/* WORK META */
+/* META – mobilde görünür */
 .work-meta {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,.45), transparent);
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 1px;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity .5s ease, transform .5s ease;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
-  border-radius: 12px;
-  pointer-events: none;
 }
 
-.work:hover .work-meta {
-  opacity: 1;
-  transform: translateY(0);
+/* hover efektlerini mobilde kapat */
+.work:hover {
+  transform: none;
+  box-shadow: none;
 }
 
-.work-meta span:first-child {
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
 
-.work-meta span:last-child {
-  font-size: 11px;
-  opacity: .85;
-}
+/* -------- WEB (900px ve üstü) -------- */
+@media (min-width: 900px) {
 
-/* WORKS TITLE */
-.works-title {
-  position: sticky;
-  top: 140px;
-  grid-column: 1/-1;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 300;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #222;
-  opacity: 0.75;
-  z-index: 20;
-  pointer-events: none;
-  background: rgba(250,250,250,0.6);
-  padding: 12px 28px;
-  backdrop-filter: blur(6px);
-  border-radius: 40px;
-  transition: opacity .4s, transform .4s;
-}
-
-.works-title.is-fading {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.works-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 1px;
-  background: rgba(0,0,0,0.25);
-  margin: 24px auto 0;
-}
-
-/* ========================
-   RESPONSIVE – MOBİL
-   ======================== */
-@media (max-width: 768px) {
   .works {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    grid-auto-rows: 100px;
-    padding: 20px 14px;
+    padding: 150px 60px 160px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    grid-auto-rows: auto;
   }
 
+  .work {
+    transition: none;
+  }
+
+  .work img {
+    border-radius: 10px;
+    transition: transform .4s ease, opacity .4s ease;
+  }
+
+  .work img:hover {
+    transform: scale(1.03);
+    opacity: .9;
+  }
+
+  /* KARE – eski web düzeni */
+  .work.square img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  /* YATAY – eski web düzeni */
   .work.horizontal {
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: auto;
+    margin: 0;
   }
 
-  .work.square img { aspect-ratio: 1 / 1; }
-  .work.horizontal img { aspect-ratio: 3 / 1; }
+  .work.horizontal img {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+  }
+
+  /* web’de meta hover ile gelsin */
+  .work-meta {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity .5s ease, transform .5s ease;
+    pointer-events: none;
+  }
+
+  .work:hover .work-meta {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* WORKSHOPS */
@@ -570,4 +559,3 @@ footer {
   padding: 60px 16px;
   opacity: 0.75;
 }
- 
