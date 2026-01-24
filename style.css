@@ -452,36 +452,26 @@ header nav a:hover::after {
 
 .contact a:hover { opacity:1; }
 
-/* FOOTER & ALT YAZILAR */
-footer {
-  width: 100%;
-  padding: 30px 20px;
-  background: transparent; /* isteğe göre renk ekleyebilirsin */
-  font-size: 14px;
-  color: #555;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px; /* webde satırlar arası boşluk */
+/* Footer ve About genel ayar */
+.about, footer {
   text-align: center;
-}
-
-footer a {
-  text-decoration: none;
-  color: #555;
-  transition: opacity 0.3s ease;
-}
-
-footer a:hover {
-  opacity: 0.8;
-}
-
-/* ALT YAZILAR İÇİN SPAN/KUTU VARSA */
-footer .footer-text {
+  font-size: 16px; /* mobilde uygun boyut */
+  padding: 20px;
   line-height: 1.5;
-  opacity: 0.8;
+}
+
+/* Footer iç span’ları yan yana yerine alt alta */
+footer span {
+  display: block;
+  margin: 5px 0;
+}
+
+/* Küçük ekranlar için responsive */
+@media (max-width: 768px) {
+  .about, footer {
+    font-size: 14px;
+    padding: 15px;
+  }
 }
 
 /* MOBİL */
