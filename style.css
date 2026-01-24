@@ -560,7 +560,7 @@ footer span {
 }
 @media (max-width: 768px) {
   .hero-detail-btn {
-    bottom: 40px;                 /* ⬅️ biraz daha yukarı */
+    bottom: 64px;                 /* ⬅️ biraz daha yukarı */
     transform: translateX(-50%) scale(0.92);
     font-size: 10px;
     letter-spacing: 2.5px;
@@ -643,13 +643,6 @@ footer span {
   }
 }
 
-@media (max-width: 768px) {
-  .preloader-logo,
-  .logo {
-    animation: none !important;
-    transform: none !important;
-  }
-}
 /* ABOUT – CONTACT ARASI MESAFE (KESİN) */
 .about {
   max-width: 647px;
@@ -738,5 +731,24 @@ footer span {
     width: 40px;
     margin: 16px auto 0;
     opacity: 0.3;
+  }
+}
+@media (max-width: 768px) {
+
+  #preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preloader-logo {
+    width: 64px;
+    animation: spin 0.9s linear infinite; /* ⬅️ hızlı dönüş */
+  }
+
+  body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease; /* ⬅️ hızlı kaybolsun */
   }
 }

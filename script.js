@@ -1,11 +1,13 @@
 window.addEventListener("load", () => {
 
-  // MOBİLDE PRELOADER HİÇ ÇALIŞMASIN
-  if (window.innerWidth <= 768) {
-    const preloader = document.getElementById("preloader");
-    if (preloader) preloader.remove();
-    return;
-  }
+
+  window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+
+  preloader.classList.add("hide");
+  setTimeout(() => preloader.remove(), 600);
+});
 
   const preloader = document.getElementById("preloader");
   if (!preloader) return;
