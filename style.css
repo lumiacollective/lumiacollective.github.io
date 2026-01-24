@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +14,9 @@ body {
   padding-top: 120px; /* HEADER yüksekliği kadar */
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 .logo-container {
   display: flex;
   align-items: center;
@@ -24,7 +28,8 @@ body {
 
 .logo-container:hover {
   transform: translateY(-1px);
-  opacity: 0.85;}
+  opacity: 0.85;
+}
 
 .logo-text {
   font-size: 20px;
@@ -33,7 +38,15 @@ body {
   letter-spacing: 1px;
 }
 
-/* PRELOADER */
+.logo {
+  width: 40px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+  animation: none;
+}
+
+/* =========================
+   PRELOADER
+========================= */
 #preloader {
   position: fixed;
   inset: 0;
@@ -46,10 +59,9 @@ body {
 
 .preloader-logo {
   width: 80px;
-  animation: spin 3s linear infinite; /* sayfa yüklenirken dönsün */
+  animation: spin 3s linear infinite;
 }
 
-/* Sayfa yüklendiğinde preloader kaybolur ve logo animasyonu durur */
 body.loaded #preloader {
   opacity: 0;
   visibility: hidden;
@@ -60,14 +72,9 @@ body.loaded .preloader-logo {
   animation: none;
 }
 
-/* Ana logo header'da dönmeyecek */
-.logo {
-  width: 40px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
-  animation: none;
-}
-
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header {
   position: fixed;
   top: 0;
@@ -125,7 +132,9 @@ header nav a:hover::after {
   color: #555;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   width: 100%;
   background: #ffffff;
@@ -204,14 +213,10 @@ header nav a:hover::after {
   50% { transform: translateX(-50%) translateY(-4px); }
   100% { transform: translateX(-50%) translateY(0); }
 } 
-/* =========================
-   WORKSHOPS – ÜST ÜSTE EFEKTİ (WEB + MOBİL)
-   ========================= */
-/* =========================
-   WORKSHOPS – ÜST ÜSTE EFEKTİ (WEB + MOBİL)
-   ========================= */
 
-/* WORKSHOPS ALANI */
+/* =========================
+   WORKSHOPS
+========================= */
 .workshops {
   padding: 120px 0 180px;
   text-align: center;
@@ -237,40 +242,39 @@ header nav a:hover::after {
   margin: 24px auto 0;
 }
 
-<<<<<<< HEAD
-/* WORKSHOPS STACK – WEB */
-.workshops-stack {
-  display: flex;
-  justify-content: center;
-  padding: 0 60px;
-  flex-wrap: nowrap;
-  overflow-x: visible;
-=======
-/* STACK */
+/* Workshops stack - web */
 .workshops-stack {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 60px;
+<<<<<<< HEAD
 >>>>>>> f1df605 (Web düzeni güncellendi)
 }
+=======
+  flex-wrap: nowrap;
+  overflow-x: visible;
+ }
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
 
 .workshops-stack .work {
-  flex: 0 0 240px;
-<<<<<<< HEAD
+   flex: 0 0 240px;
   margin-left: -70px;
   opacity: 0.5;
   transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+<<<<<<< HEAD
 =======
   margin-left: -80px;
   opacity: 0.45;
   transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
 >>>>>>> f1df605 (Web düzeni güncellendi)
 }
+=======
+ }
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
 
 .workshops-stack .work:first-child {
-  margin-left: 0;
-<<<<<<< HEAD
+   margin-left: 0;
 }
 
 .workshops-stack .work img {
@@ -280,9 +284,9 @@ header nav a:hover::after {
   border-radius: 12px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
-
-/* Hover efektleri – web */
+ 
 .workshops-stack .work:hover {
+<<<<<<< HEAD
   transform: scale(1.15);
 =======
 }
@@ -299,15 +303,18 @@ header nav a:hover::after {
 .workshops-stack .work:hover {
   transform: scale(1.18);
 >>>>>>> f1df605 (Web düzeni güncellendi)
+=======
+   transform: scale(1.15);
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
   opacity: 1;
   z-index: 10;
 }
 
 .workshops-stack:hover .work:not(:hover) {
-<<<<<<< HEAD
-  opacity: 0.25;
+   opacity: 0.25;
   filter: blur(1px);
   transform: scale(0.92);
+<<<<<<< HEAD
 =======
   opacity: 0.22;
   filter: blur(1.2px);
@@ -394,101 +401,84 @@ header nav a:hover::after {
     font-size: 26px;
     margin: 120px auto 60px;
   }
+=======
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
 }
 
 /* =========================
-   WORKS – WEB GRID DÜZEN (900px ve üzeri)
+   WORKS GRID
 ========================= */
-@media (min-width: 900px) {
-  .works {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 sütun üst satır */
-    grid-auto-rows: 240px; /* temel kare yüksekliği */
-    gap: 36px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 150px 60px 160px;
-  }
-
-  /* Kareler */
-  .work.square {
-    aspect-ratio: 1 / 1;
-  }
-
-  .work.square img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Yatay / horizontal görseller */
-  .work.horizontal {
-    aspect-ratio: 2 / 1; /* 2 kare genişliğinde ama 2 yatay yan yana */
-  }
-
-  /* Satır bazlı konumlandırma */
-  .w5 { grid-column: 1 / 3; grid-row: 2; } /* 5. görsel */
-  .w6 { grid-column: 3 / 5; grid-row: 2; } /* 6. görsel */
-  .w11 { grid-column: 1 / 3; grid-row: 4; } /* 11. görsel */
-  .w12 { grid-column: 3 / 5; grid-row: 4; } /* 12. görsel */
-
-  .work.horizontal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Hover efekti */
-  .work {
-    transition: transform 0.3s ease;
-  }
-
-  .work:hover {
-    transform: translateY(-6px);
-    z-index: 10; /* hover sırasında üstte kalsın */
-  }
-
-  .work-meta {
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-
-  .work:hover .work-meta {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.works-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin: 140px auto 80px;
 }
- 
-  /* Başlık */
-  .works-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    margin: 140px auto 80px;
-  }
 
+.works {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  gap: 36px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 150px 60px 160px;
+}
 
- /* ABOUT */
+.work.square {
+  aspect-ratio: 1 / 1;
+}
+
+.work.horizontal {
+  aspect-ratio: 2 / 1;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work:hover {
+  transform: translateY(-6px);
+  z-index: 10;
+}
+
+.work-meta {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.work:hover .work-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   ABOUT
+========================= */
 .about {
   position: relative;
   overflow: hidden;
-  max-width: 90%;       /* genişliği mobil için daha esnek yap */
-  margin: 120px auto 20px auto; /* üst-alt margin ayarı */
-  padding: 40px 10px;   /* mobilde daha az padding */
+  max-width: 90%;
+  margin: 120px auto 20px;
+  padding: 40px 10px;
   text-align: center;
-  font-size: 16px;      /* mobilde uygun boyut */
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.45;
   opacity: 0.85;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT & FOOTER
+========================= */
 .contact {
   padding: 20px 10px 140px;
   text-align: center;
-  font-size: 14px;      /* daha küçük yazı */
+  font-size: 14px;
   letter-spacing: 1px;
   opacity: 0.8;
 }
@@ -501,60 +491,43 @@ header nav a:hover::after {
 }
 
 .contact a:hover { opacity: 1; }
-
-/* FOOTER */
+ 
 footer {
   text-align: center;
   font-size: 14px;
   padding: 20px 10px;
   line-height: 1.5;
 }
- 
+
 footer span {
   display: block;
   margin: 5px 0;
 }
 
-/* Responsive küçük ekran */
-@media (max-width: 768px) {
-  .about {
-    font-size: 14px;
-    padding: 20px 10px;
-    margin: 80px auto 15px auto;
-  }
-  
-  .contact {
-    font-size: 13px;
-    padding: 15px 10px 80px 10px;
-  }
-
-  footer {
-    font-size: 13px;
-    padding: 15px 10px;
-  }
-}
-
-
-/* IMAGE ZOOM */
+/* =========================
+   IMAGE ZOOM
+========================= */
 .image-overlay {
-  position:fixed;
-  inset:0;
-  background:rgba(250,250,250,.96);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
-  cursor:zoom-out;
+  position: fixed;
+  inset: 0;
+  background: rgba(250,250,250,.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  cursor: zoom-out;
 }
 
 .image-overlay img {
-  max-width:90%;
-  max-height:90%;
-  border-radius:12px;
-  box-shadow:0 40px 80px rgba(0,0,0,.25);
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 40px 80px rgba(0,0,0,.25);
 }
 
-/* WATER / INK EFFECT */
+/* =========================
+   WATER / INK EFFECT
+========================= */
 .watercolor {
   position: fixed;
   width: 140px;
@@ -590,16 +563,20 @@ footer span {
   to { transform: scale(2.5); opacity: 0; }
 }
 
-/* KEYFRAMES */
+/* =========================
+   KEYFRAMES
+========================= */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* RESPONSIVE - MOBİL */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
-<<<<<<< HEAD
-   /* HEADER */
+
+  /* HEADER */
   header { padding: 20px 30px; }
   .main-nav { gap: 20px; font-size: 14px; }
 =======
@@ -614,6 +591,7 @@ footer span {
   .hero-text-area h1 { font-size: 38px; }
   .hero-image-area { height: 50vh; }
   .hero-image-area img { height: 100%; object-fit: cover; }
+<<<<<<< HEAD
  }
 /* ===================== */
 #preloader { display:none !important; }
@@ -624,22 +602,18 @@ footer span {
   .hero-image-area img { height:100%; object-fit:cover; }
 
   /* WORKS */
+=======
+ 
+  /* WORKS GRID */
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
   .works {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 80px 20px 100px;
-    grid-template-areas:
-      "w1 w2"
-      "w3 w4"
-      "w5 w5"
-      "w6 w6"
-      "w7 w8"
-      "w9 w10"
-      "w11 w11"
-      "w12 w12";
+    gap: 16px;
+    padding: 80px 16px 100px;
   }
 
+<<<<<<< HEAD
   /* GRID AREAS */
   .w1 { grid-area: w1; }
   .w2 { grid-area: w2; }
@@ -666,20 +640,32 @@ footer span {
 }
 <<<<<<< HEAD
 @media (max-width: 900px) {
+=======
+  .work.square, .work.horizontal {
+    aspect-ratio: 1 / 1;
+  }
+
+  .work.horizontal img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* ABOUT */
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
   .about {
     font-size: 15px;
     line-height: 1.45;
     padding: 50px 18px;
     max-width: 520px;
   }
-}
-/* Mobilde footer ve contact normal flow'da kalsın */
-@media (max-width: 900px) {
+
+  /* CONTACT & FOOTER */
   .contact, footer {
     position: static;
     display: block;
     margin: 0 auto;
   }
+<<<<<<< HEAD
 }
 <<<<<<< HEAD
 
@@ -699,21 +685,30 @@ footer span {
   }
   /* WORKSHOPS – MOBİL */
 @media (max-width: 768px) {
+=======
+
+  /* WORKSHOPS STACK - MOBİL */
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
   .workshops-stack {
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
     padding: 0 20px;
   }
 
   .workshops-stack .work {
-    margin: 0 0 24px;
+    flex: 0 0 45%;
+    margin-left: 0;
     opacity: 1;
-    transform: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
   }
 
-  .workshops-stack .work img {
-    height: auto;
+  .workshops-stack .work:hover {
+    transform: translateY(-6px) scale(1.03);
   }
+
 }
+<<<<<<< HEAD
 
   /* PRELOADER */
   #preloader { display:none !important; }
@@ -767,33 +762,18 @@ footer span {
   margin: 140px auto 80px;
 =======
 /* WORKS – MOBİL (768px altı) */
+=======
+ 
+/* =========================
+   RESPONSIVE 768px altı
+========================= */
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
 @media (max-width: 768px) {
-
-  .works {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 kolon */
+ .works {
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
-    grid-template-areas:
-      "w1 w2"
-      "w3 w4"
-      "w5 w5"
-      "w6 w7"
-      "w8 w9"
-      "w10 w10"; /* istersen daha fazla ekleyebilirsin */
   }
-
-  /* GRID AREAS */
-  .w1 { grid-area: w1; }
-  .w2 { grid-area: w2; }
-  .w3 { grid-area: w3; }
-  .w4 { grid-area: w4; }
-  .w5 { grid-area: w5; } /* horizontal tek fotoğraf */
-  .w6 { grid-area: w6; }
-  .w7 { grid-area: w7; }
-  .w8 { grid-area: w8; }
-  .w9 { grid-area: w9; }
-  .w10 { grid-area: w10; }
 
   .works .work img {
     width: 100%;
@@ -803,5 +783,14 @@ footer span {
     border-radius: 8px;
   }
 
+<<<<<<< HEAD
 >>>>>>> f1df605 (Web düzeni güncellendi)
+=======
+  .about { font-size: 14px; padding: 20px 16px; margin: 80px auto 15px; }
+  .contact { font-size: 13px; padding: 15px 10px 80px; }
+  footer { font-size: 13px; padding: 15px 10px; }
+  
+  #preloader { display: none !important; }
+  .preloader-logo { animation: none !important; }
+>>>>>>> c51f886 ("Tüm değişiklikler eklendi")
 }
