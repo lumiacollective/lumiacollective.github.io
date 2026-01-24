@@ -498,12 +498,11 @@ footer {
   .hero-image-area { height:50vh; }
   .hero-image-area img { height:100%; object-fit:cover; }
 
-  /* WORKS GRID */
-  .works { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:80px 20px 100px; }
-  .works .work.square { width:100%; aspect-ratio:1/1; }
-  .works .work.horizontal { grid-column:span 2; width:100%; aspect-ratio:2/1; }
- .works {
+  .works {
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 80px 20px 100px;
     grid-template-areas:
       "w1 w2"
       "w3 w4"
@@ -515,6 +514,18 @@ footer {
       "w12 w12";
   }
 
+  /* RESET – grid-area bozan şeyleri kapat */
+  .works .work {
+    width: auto;
+  }
+
+  .works .work.square,
+  .works .work.horizontal {
+    grid-column: auto;
+    aspect-ratio: auto;
+  }
+
+  /* GRID AREAS */
   .w1 { grid-area: w1; }
   .w2 { grid-area: w2; }
   .w3 { grid-area: w3; }
@@ -532,7 +543,9 @@ footer {
   /* WORKSHOPS */
   .workshops-stack { padding:0 20px; flex-wrap:wrap; gap:16px; justify-content:center; }
   .workshops-stack .work { flex:0 0 45%; margin-left:0; opacity:1; }
-
+ .workshops-stack .work:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
   /* PRELOADER */
   #preloader { display:none !important; }
   .preloader-logo { animation:none !important; }
