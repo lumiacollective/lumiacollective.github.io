@@ -88,3 +88,24 @@ document.addEventListener('click', e => {
 
   setTimeout(() => water.remove(), 2600);
 });
+window.addEventListener('scroll', () => {
+  const title = document.querySelector('.works-title');
+  const works = document.querySelector('.works');
+
+  if (!title || !works) return;
+
+  const scrollY = window.scrollY;
+  const start = works.offsetTop - window.innerHeight * 0.5;
+  const end = works.offsetTop + works.offsetHeight * 0.3;
+
+  if (scrollY < start) {
+    title.style.transform = 'translateY(0px)';
+    title.style.opacity = 1;
+    return;
+  }
+
+  const progress = Math.min(scrollY - start, end - start);
+
+  title.style.transform = `translateY(${progress * 0.25}px)`;
+  title.style.opacity = Math.max(1 - progress / 300, 0);
+});
