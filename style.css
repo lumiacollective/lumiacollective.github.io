@@ -543,26 +543,29 @@ footer {
 @media (max-width: 768px) {
   .works {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 kolon */
-    gap: 10px;
-    padding: 50px 14px 70px;
+    grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+    gap: 10px; /* kareler arasındaki boşluk */
+    padding: 50px 14px 70px; /* container padding */
   }
 
   /* Kare görseller */
+  .work.square {
+    grid-column: span 1; /* 1 sütun kaplasın */
+  }
   .work.square img {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
-  /* Yatay görseller 2 kolon boyunca */
+  /* Yatay (horizontal) görseller */
   .work.horizontal {
-    grid-column: 1 / -1; /* iki kolon boyunca */
+    grid-column: 1 / -1; /* 2 sütun boyunca uzansın */
   }
   .work.horizontal img {
-    aspect-ratio: 3 / 1;
-  }
-
-  /* Tüm görseller */
-  .works .work img {
+    aspect-ratio: 3 / 1; /* yatay oran */
     width: 100%;
     height: 100%;
     object-fit: cover;
