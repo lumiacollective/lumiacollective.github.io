@@ -829,14 +829,11 @@ footer span {
     transition: opacity 0.5s ease;
   }
 }
+
 @media (max-width: 768px) {
-  #preloader {
-    display: none !important;
-  }
-}
-/* MOBİLDE HEADER LOGOSUNU BAŞTAN GİZLE */
-@media (max-width: 768px) {
-  .intro-logo {
-    display: none !important;
+  .preloader-logo,
+  .logo {
+    animation: none !important;
+    transform: none !important;
   }
 }
