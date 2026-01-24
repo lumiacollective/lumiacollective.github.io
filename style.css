@@ -1,7 +1,5 @@
-/* =========================
-   RESET
-========================= */
-* {
+
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,12 +9,9 @@ body {
   background: #ffffff;
   color: #111;
   font-family: 'Cormorant Garamond', serif;
-  padding-top: 120px; 
+  padding-top: 120px; /* HEADER yüksekliği kadar */
 }
-
-/* =========================
-   LOGO
-========================= */
+ 
 .logo-container {
   display: flex;
   align-items: center;
@@ -43,10 +38,7 @@ body {
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
   animation: none;
 }
-
-/* =========================
-   PRELOADER
-========================= */
+ 
 #preloader {
   position: fixed;
   inset: 0;
@@ -55,11 +47,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 5000;
-}
-
-.preloader-logo {
-  width: 80px;
-  animation: spin 3s linear infinite;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 body.loaded #preloader {
@@ -68,10 +56,23 @@ body.loaded #preloader {
   pointer-events: none;
 }
 
+.preloader-logo {
+  width: 80px;
+  animation: spin 3s linear infinite;
+}
+
 body.loaded .preloader-logo {
   animation: none;
 }
 
+/* PRELOADER LOGOSUNU HEADER'DAN TAMAMEN KOPAR */
+#preloader .preloader-logo {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 auto;
+}
 
 header {
   position: fixed;
@@ -110,8 +111,7 @@ header nav a::after {
 header nav a:hover::after {
   width: 100%;
 }
-
-/* NAV MENU */
+ 
 .main-nav {
   display: flex;
   gap: 32px;
@@ -129,10 +129,7 @@ header nav a:hover::after {
 .main-nav a:hover {
   color: #555;
 }
-
-/* =========================
-   HERO
-========================= */
+ 
 .hero {
   width: 100%;
   background: #ffffff;
@@ -168,29 +165,23 @@ header nav a:hover::after {
   height: 70%;
   object-fit: cover;
 }
-
-
+ 
 .hero-detail-btn {
-  position: absolute;
-  right: 60px;
-  bottom: 54px;
-
-  padding: 14px 28px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-
-  color: #222;
-  text-decoration: none;
-
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 40px;
-
-  opacity: 0.9;
-
-  transition: transform 0.3s ease,
+   position: absolute;
+    right: 60px;
+     bottom: 54px;
+      padding: 14px 28px;
+       font-size: 11px;
+       letter-spacing: 3px;
+        text-transform: uppercase;
+         color: #222;
+          text-decoration: none;
+           background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+             border: 1px solid rgba(0,0,0,0.12);
+             border-radius: 40px;
+              opacity: 0.9;
+               transition: transform 0.3s ease,
               box-shadow 0.3s ease,
               letter-spacing 0.3s ease;
 }
@@ -200,10 +191,7 @@ header nav a:hover::after {
   letter-spacing: 4px;
   box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
-
-/* =========================
-   WORKSHOPS
-========================= */
+ 
 .workshops {
   padding: 120px 0 180px;
   text-align: center;
@@ -234,119 +222,65 @@ header nav a:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-   padding: 0 60px;
+  padding: 0 60px;
   flex-wrap: nowrap;
   overflow-x: visible;
-}
+ }
 
 .workshops-stack .work {
-  flex: 0 0 240px;
-  margin-left: -80px;
-  opacity: 0.45;
-  transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
-
+   flex: 0 0 240px;
+  margin-left: -70px;
+  opacity: 0.5;
  }
- 
+
 .workshops-stack .work:first-child {
-  margin-left: 0;
+   margin-left: 0;
 }
- 
+
 .workshops-stack .work img {
   width: 100%;
-  height: 340px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
-
-/* HOVER DAVRANIŞI */
+ 
 .workshops-stack .work:hover {
-   transform: scale(1.18);
+   transform: scale(1.08);
   opacity: 1;
   z-index: 10;
 }
-
-.workshops-stack:hover .work:not(:hover) {
-  opacity: 0.22;
-  filter: blur(1.2px);
-  transform: scale(0.9);
-}
-
-/* ... devam eden tüm CSS kodları aynı şekilde ... */
-
+ 
 .workshops-stack:hover .work:not(:hover) {
    opacity: 0.25;
   filter: blur(1px);
   transform: scale(0.92);
 }
 
-
-  .workshops-stack:hover .work:not(:hover) {
-  opacity: 0.22;
-  filter: blur(1.2px);
-  transform: scale(0.9);
+.fade-load,
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-@media (max-width: 900px) {
-  .workshops-stack {
-    padding: 0 16px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    gap: 0; /* margin yerine gap ile daha stabil scroll */
-  }
-
-  .workshops-stack .work {
-    flex: 0 0 calc(50% + 20px); /* ekranın yarısı + overlap için */
-    margin-left: -20px;          /* overlap azaltıldı */
-    opacity: 0.6;
-  }
-
-  .workshops-stack .work:first-child {
-    margin-left: 0;
-  }
-
-  .workshops-stack .work img {
-    height: 280px;
-  }
-
-  .works {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 0 16px;
-  }
-
-  .work {
-    margin: 0;
-  }
-
-  .work.square {
-    aspect-ratio: 1 / 1;
-  }
-
-  .work.horizontal {
-    grid-column: 1 / -1;
-    aspect-ratio: 3 / 1;
-  }
-
-  .work img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .works-title {
-    text-align: center;
-    font-size: 26px;
-    margin: 120px auto 60px;
-   }
+.fade-load.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* =========================
-   WORKS GRID – WEB (900px+)
-========================= */
+.fade-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+
 @media (min-width: 900px) {
-   .works {
+  .works {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
@@ -359,21 +293,17 @@ header nav a:hover::after {
     position: sticky;
     top: 120px;
     grid-column: 1 / -1;
-
     text-align: center;
     font-size: 22px;
     font-weight: 300;
     letter-spacing: 6px;
     text-transform: uppercase;
-
     color: #222;
     opacity: 0.6;
     z-index: 50;
     pointer-events: none;
-
-    background: none;
-    backdrop-filter: blur(6px);
-
+    background: none; /* ✔️ ayrı */
+    backdrop-filter: blur(6px); /* ✔️ ayrı */
     transition: opacity 0.3s ease-out;
   }
 
@@ -390,8 +320,8 @@ header nav a:hover::after {
     margin: 24px auto 0;
   }
 }
- 
-/* ORTAK WORK KUTUSU */
+
+
 .work {
   position: relative;
   overflow: hidden;
@@ -399,12 +329,12 @@ header nav a:hover::after {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* KARE */
+
 .work.square {
   aspect-ratio: 1 / 1;
 }
 
-/* HORIZONTAL – 2 tane yan yana */
+
 .work.horizontal {
   aspect-ratio: 2 / 1;
   grid-column: span 2;
@@ -417,14 +347,14 @@ header nav a:hover::after {
   display: block;
 }
 
-/* HOVER */
+
 .work:hover {
   transform: translateY(-8px);
   box-shadow: 0 25px 50px rgba(0,0,0,0.18);
   z-index: 5;
 }
 
-/* Meta bilgiler */
+
 .work-meta {
   opacity: 0;
   transform: translateY(15px);
@@ -435,43 +365,55 @@ header nav a:hover::after {
   opacity: 1;
   transform: translateY(0);
 }
- 
-/* =========================
-   ABOUT
-========================= */
+
+
 .about {
   position: relative;
   overflow: hidden;
-  max-width: 90%;
-  margin: 200px auto 20px;
-  padding: 40px 10px;
+  max-width: 650px;
+  margin: 100px auto 120px;
+  padding: 80px 20px;
   text-align: center;
   font-size: 20px;
-  font-weight: 300;
   line-height: 1.45;
-  opacity: 0.85;
+  opacity: .85;
 }
 
-/* =========================
-   CONTACT & FOOTER
-========================= */
+.about .cursor-trace {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.04) 55%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  transition: opacity .4s ease;
+  mix-blend-mode: multiply;
+  z-index: 10;
+  filter: blur(8px);
+}
+
+
 .contact {
   padding: 20px 10px 140px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   opacity: 0.8;
 }
 
 .contact a {
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   color: #111;
   transition: opacity 0.3s ease;
 }
 
-.contact a:hover { opacity: 1; }
- 
+.contact a:hover {
+  opacity: 1;
+}
+
 footer {
   text-align: center;
   font-size: 14px;
@@ -484,9 +426,7 @@ footer span {
   margin: 5px 0;
 }
 
-/* =========================
-   IMAGE ZOOM
-========================= */
+
 .image-overlay {
   position: fixed;
   inset: 0;
@@ -505,62 +445,39 @@ footer span {
   box-shadow: 0 40px 80px rgba(0,0,0,.25);
 }
 
-/* =========================
-   WATER / INK EFFECT
-========================= */
-.watercolor {
-  position: fixed;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.15) 20%, transparent 65%);
-  filter: blur(6px);
-  mix-blend-mode: multiply;
-  animation: watercolorSpread 2.4s ease-out forwards;
-}
+                
 
-@keyframes watercolorSpread {
-  from { transform: scale(0.2); opacity: 0.85; }
-  to { transform: scale(2.8); opacity: 0; }
-}
-
-.ink {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.35), rgba(0,0,0,0.15), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: inkSpread 1.6s ease-out forwards;
-  mix-blend-mode: multiply;
-  z-index: 9999;
-}
-
-@keyframes inkSpread {
-  from { transform: scale(0.2); opacity: 0.9; }
-  to { transform: scale(2.5); opacity: 0; }
-}
-
-/* =========================
-   KEYFRAMES
-========================= */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-   header { padding: 20px 30px; }
-  .main-nav { gap: 20px; font-size: 14px; }
 
-  .hero-text-area h1 { font-size: 38px; }
-  .hero-image-area { height: 50vh; }
-  .hero-image-area img { height: 100%; object-fit: cover; }
+@media (max-width: 900px) {
+   /* HEADER */
+  header {
+    padding: 20px 30px;
+  }
+
+  .main-nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero-text-area h1 {
+    font-size: 38px;
+  }
+
+  .hero-image-area {
+    height: 50vh;
+  }
+
+  .hero-image-area img {
+    height: 100%;
+    object-fit: cover;
+  }
+
 
   .works {
     display: grid;
@@ -568,42 +485,9 @@ footer span {
     gap: 16px;
     padding: 80px 16px 100px;
   }
-}
 
-@media (max-width: 900px) {
-
-  /* HEADER */
-  header { padding: 20px 30px; }
-  .main-nav { gap: 20px; font-size: 14px; }
- 
-  /* HERO */
-   .hero-text-area h1 { font-size: 38px; }
-  .hero-image-area { height: 50vh; }
-  .hero-image-area img { height: 100%; object-fit: cover; }
-
-  /* WORKS GRID */
-   .works {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 80px 16px 100px;
-  }
- 
-  /* GRID AREAS */
-  .w1 { grid-area: w1; }
-  .w2 { grid-area: w2; }
-  .w3 { grid-area: w3; }
-  .w4 { grid-area: w4; }
-  .w5 { grid-area: w5; }
-  .w6 { grid-area: w6; }
-  .w7 { grid-area: w7; }
-  .w8 { grid-area: w8; }
-  .w9 { grid-area: w9; }
-  .w10 { grid-area: w10; }
-  .w11 { grid-area: w11; }
-  .w12 { grid-area: w12; }
-
-  .work.square, .work.horizontal {
+  .work.square,
+  .work.horizontal {
     aspect-ratio: 1 / 1;
   }
 
@@ -612,47 +496,21 @@ footer span {
     object-fit: cover;
   }
 
-  /* ABOUT */
-  .about {
-    font-size: 15px;
-    line-height: 1.45;
-    padding: 50px 18px;
-    max-width: 520px;
-  }
-
   /* CONTACT & FOOTER */
-  .contact, footer {
+  .contact,
+  footer {
     position: static;
     display: block;
     margin: 0 auto;
   }
 
-  /* WORKSHOPS */
-  .workshops-stack { 
-    padding: 0 20px; 
-    flex-wrap: wrap; 
-    gap: 16px; 
-    justify-content: center; 
-  }
-  .workshops-stack .work { 
-    flex: 0 0 45%; 
-    margin-left: 0; 
-    opacity: 1; 
-  }
-  .workshops-stack .work:hover {
-    transform: translateY(-6px) scale(1.03);
-  }
-}
-
-/* WORKSHOPS STACK - MOBİL */
-@media (max-width: 768px) {
-   .workshops-stack {
+  /* WORKSHOPS STACK - MOBİL */
+  .workshops-stack {
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
     padding: 0 20px;
   }
-}
 
   .workshops-stack .work {
     flex: 0 0 45%;
@@ -664,70 +522,96 @@ footer span {
   .workshops-stack .work:hover {
     transform: translateY(-6px) scale(1.03);
   }
-
-   .hero-detail-btn {
-    transform: translateX(-50%) scale(0.95);
-
 }
+
+
 @media (max-width: 768px) {
+
+
   .hero-detail-btn {
-    bottom: 40px;                 /* ⬅️ biraz daha yukarı */
+    bottom: 64px;
     transform: translateX(-50%) scale(0.92);
     font-size: 10px;
     letter-spacing: 2.5px;
     padding: 12px 22px;
     opacity: 0.85;
-
   }
-}
 
+  /* ----------------- WORKS GRID (KRİTİK) ----------------- */
   .works {
-
-
-/* =========================
-   RESPONSIVE 768px altı
-========================= */
-@media (max-width: 768px) {
- .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
+    margin-top: 20px;
+  }
+
+  .works .work {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
   }
 
   .works .work img {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 8px;
   }
 
-  .about { 
-    font-size: 14px; 
-    padding: 20px 16px; 
-    margin: 80px auto 15px; 
-  }
-  .contact { 
-    font-size: 13px; 
-    padding: 15px 10px 80px; 
-  }
-  footer { 
-    font-size: 13px; 
-    padding: 15px 10px; 
+  /* 🔥 MOBİLDE GÖRSEL KİLİDİNİ TAM AÇ */
+  .works,
+  .works .work,
+  .works .work img {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 
-
-  #preloader { display: none !important; }
-   .preloader-logo { animation: none !important; }
-  .contact {
-    margin-top: 40px;
-  }
 }
 
-  footer { font-size: 13px; padding: 15px 10px; }
-  
-@media (max-width: 768px) {
 
+  .works-title {
+    position: relative;
+    top: auto;
+    margin-bottom: 24px;
+    font-size: 26px;
+    letter-spacing: 4px;
+    opacity: 0.45;
+    transform: none;
+    transition: opacity 0.2s ease-out;
+    margin-top: 124px;
+  }
+
+  .works-title.is-fading {
+    opacity: 0;
+  }
+
+  .works-title::after {
+    width: 40px;
+    margin: 16px auto 0;
+    opacity: 0.3;
+  }
+
+  /* ----------------- ABOUT ----------------- */
+  .about {
+    column-count: 1;
+    max-width: 100%;
+    margin: 120px auto 80px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  /* ----------------- CONTACT & FOOTER ----------------- */
+  .contact {
+    margin-top: 0 !important;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 15px 10px;
+  }
+
+  /* ----------------- PRELOADER ----------------- */
   #preloader {
     position: fixed;
     inset: 0;
@@ -738,19 +622,27 @@ footer span {
     z-index: 5000;
   }
 
-  .preloader-logo {
-    animation: spin 1.2s linear infinite;
+@media (max-width: 768px) {
+  header {
+    opacity: 0;
+    pointer-events: none;
   }
 
-  body.loaded #preloader {
-    opacity: 0;
-    visibility: hidden;
+  body.loaded header {
+    opacity: 1;
+    pointer-events: auto;
     transition: opacity 0.4s ease;
+  }
+  @media (max-width: 768px) {
+  header .logo,
+  header .logo-container {
+    display: none !important;
   }
 }
 
-/* MOBİL – LOGO SADECE SAYFA YÜKLENİRKEN GÖRÜNSÜN */
-@media (max-width: 768px) {
+}
+
+  /* ----------------- LOGO INTRO ----------------- */
   .intro-logo {
     animation: introFadeOut 1.2s ease forwards;
     animation-delay: 1.2s;
@@ -758,103 +650,115 @@ footer span {
 
   .logo-container {
     position: static !important;
-     transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
   }
-
-   .preloader-logo,
-  .logo {
-    animation: none !important;
+   
+  .fade-scroll  {
+    opacity: 1 !important;
     transform: none !important;
   }
-}
+  
 
-/* ABOUT – CONTACT ARASI MESAFE (KESİN) */
-.about {
-  max-width: 647px;
-  margin: 180px auto;
-  padding: 0 20px;
-
-  columns: 1;
-  column-gap: 80px;
-
-  text-align: center;
-}
-
-.contact {
-  margin-top: 0 !important;
-}
-
-@media (max-width: 768px) {
-  .about {
-    column-count: 1;
-    max-width: 520px;
-    margin: 120px auto 80px;
-    padding: 0 20px;
-    text-align: center;
+  @media (max-width: 768px) {
+  header {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
   }
+
+  body.loaded header {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+ 
 }
 
 .watercolor {
   position: fixed;
-  width: 160px;
-  height: 160px;
-  pointer-events: none;
-  z-index: 99999;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  filter: blur(2px);
+  pointer-events: none;
+  z-index: 9999;
+
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0.15) 20%,
+    transparent 65%);
+
+  filter: blur(6px);
   mix-blend-mode: multiply;
 
-  background:
-    radial-gradient(circle at 30% 30%,
-      rgba(120, 180, 255, 0.55),
-      rgba(180, 120, 255, 0.35) 25%,
-      rgba(255, 180, 120, 0.25) 45%,
-      transparent 70%
-    );
-
-  animation: watercolorSpread 2.6s ease-out forwards;
+  animation: watercolorSpread 2.4s ease-out forwards;
 }
 
 @keyframes watercolorSpread {
-  0% {
-    transform: scale(0.4);
+  from {
+    transform: scale(0.2);
     opacity: 0.85;
   }
-  60% {
-    transform: scale(1.15);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.4);
+  to {
+    transform: scale(2.8);
     opacity: 0;
   }
 }
-}/* =========================
-   WORKS TITLE – MOBİL AYARI
-========================= */
-@media (max-width: 768px) {
 
-  .works-title {
-    position: relative;          /* ⛔ sticky iptal */
-    top: auto;
-
-    margin-bottom: 24px;         /* grid’den biraz ayrıl */
-    font-size: 16px;
-    letter-spacing: 4px;
-
-    opacity: 0.45;
-    transform: none;
-
-    transition: opacity 0.2s ease-out;
-  }
-
-  .works-title.is-fading {
-    opacity: 0;                  /* hızlıca silinsin */
-  }
-
-  .works-title::after {
-    width: 40px;
-    margin: 16px auto 0;
-    opacity: 0.3;
-  }
+.ink {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.15),
+    transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: inkSpread 1.6s ease-out forwards;
+  mix-blend-mode: multiply;
+  z-index: 9999;
 }
+
+@keyframes inkSpread {
+  from {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}/* FORCE PRELOADER CENTER – NOKTA */
+#preloader {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+#preloader .preloader-logo {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(0deg) !important;
+}
+/* ====== HARD RESET PRELOADER (SON NOKTA) ====== */
+#preloader {
+  position: fixed !important;
+  inset: 0 !important;
+  background: #fafafa !important;
+  z-index: 99999 !important;
+}
+
+#preloader img,
+#preloader .preloader-logo {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 72px !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+  animation: spin 1.2s linear infinite !important;
+}
+
