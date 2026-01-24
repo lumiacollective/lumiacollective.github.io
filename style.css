@@ -422,8 +422,7 @@ header nav a:hover::after {
     transform: translateY(0);
   }
 }
-
-
+ 
   /* Başlık */
   .works-title {
     text-align: center;
@@ -590,6 +589,14 @@ footer span {
     line-height: 1.45;
     padding: 50px 18px;
     max-width: 520px;
+  }
+}
+/* Mobilde footer ve contact normal flow'da kalsın */
+@media (max-width: 900px) {
+  .contact, footer {
+    position: static;
+    display: block;
+    margin: 0 auto;
   }
 }
 
