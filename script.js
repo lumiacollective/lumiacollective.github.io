@@ -54,3 +54,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+document.addEventListener('click', e => {
+
+  const colors = [
+    'rgba(120,180,255,',
+    'rgba(180,120,255,',
+    'rgba(255,180,120,',
+    'rgba(120,200,160,',
+    'rgba(200,140,160,'
+  ];
+
+  const c1 = colors[Math.floor(Math.random() * colors.length)];
+  const c2 = colors[Math.floor(Math.random() * colors.length)];
+  const c3 = colors[Math.floor(Math.random() * colors.length)];
+
+  const water = document.createElement('div');
+  water.className = 'watercolor';
+
+  water.style.left = (e.clientX - 80) + 'px';
+  water.style.top  = (e.clientY - 80) + 'px';
+
+  water.style.background = `
+    radial-gradient(circle at 30% 30%,
+      ${c1}0.55),
+      ${c2}0.35) 30%,
+      ${c3}0.25) 50%,
+      transparent 70%
+    )
+  `;
+
+  document.body.appendChild(water);
+
+  setTimeout(() => water.remove(), 2600);
+});

@@ -481,10 +481,10 @@ header nav a:hover::after {
   position: relative;
   overflow: hidden;
   max-width: 90%;
-  margin: 120px auto 20px;
+  margin: 200px auto 20px;
   padding: 40px 10px;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.45;
   opacity: 0.85;
@@ -669,7 +669,6 @@ footer span {
   }
 
   /* ABOUT */
->>>>>>> c51f886 ("Tüm değişiklikler eklendi")
   .about {
     font-size: 15px;
     line-height: 1.45;
@@ -801,9 +800,6 @@ footer span {
     border-radius: 8px;
   }
 
-<<<<<<< HEAD
->>>>>>> f1df605 (Web düzeni güncellendi)
-=======
   .about { font-size: 14px; padding: 20px 16px; margin: 80px auto 15px; }
   .contact { font-size: 13px; padding: 15px 10px 80px; }
   footer { font-size: 13px; padding: 15px 10px; }
@@ -835,5 +831,66 @@ footer span {
   .logo {
     animation: none !important;
     transform: none !important;
+  }
+}
+/* ABOUT – CONTACT ARASI MESAFE (KESİN) */
+.about {
+  max-width: 647px;
+  margin: 180px auto;
+  padding: 0 20px;
+
+  columns: 1;
+  column-gap: 80px;
+
+  text-align: center; /* ⬅️ MERKEZLİ HİS */
+}
+
+.contact {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .about {
+    column-count: 1;
+    max-width: 520px;
+    margin: 120px auto 80px;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+
+.watercolor {
+  position: fixed;
+  width: 160px;
+  height: 160px;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 50%;
+  filter: blur(2px);
+  mix-blend-mode: multiply;
+
+  background:
+    radial-gradient(circle at 30% 30%,
+      rgba(120, 180, 255, 0.55),
+      rgba(180, 120, 255, 0.35) 25%,
+      rgba(255, 180, 120, 0.25) 45%,
+      transparent 70%
+    );
+
+  animation: watercolorSpread 2.6s ease-out forwards;
+}
+
+@keyframes watercolorSpread {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.85;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
   }
 }
