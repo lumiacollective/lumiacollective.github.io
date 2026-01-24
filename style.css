@@ -590,21 +590,19 @@ footer {
     grid-column: span 2;
   }
 
-  /* Görsellerin kare / yatay aspect-ratio */
-  .works .work img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  /* Kareler için aspect ratio */
+  /* Kare görseller için aspect ratio */
   .work:not(.horizontal) img {
     aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
   }
 
   /* Horizontal görseller için aspect ratio */
   .work.horizontal img {
-    aspect-ratio: 3 / 1; 
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
   }
 }
