@@ -558,9 +558,14 @@ footer span {
   }
 
 }
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hero-detail-btn {
-    transform: translateX(-50%) scale(0.95);
+    bottom: 26px;                 /* ⬅️ hero görseline daha yakın */
+    transform: translateX(-50%) scale(0.92);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    padding: 12px 22px;
+    opacity: 0.85;
   }
 }
 
