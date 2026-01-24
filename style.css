@@ -705,3 +705,32 @@ footer span {
     opacity: 0;
   }
 }
+}/* =========================
+   WORKS TITLE – MOBİL AYARI
+========================= */
+@media (max-width: 768px) {
+
+  .works-title {
+    position: relative;          /* ⛔ sticky iptal */
+    top: auto;
+
+    margin-bottom: 24px;         /* grid’den biraz ayrıl */
+    font-size: 16px;
+    letter-spacing: 4px;
+
+    opacity: 0.45;
+    transform: none;
+
+    transition: opacity 0.2s ease-out;
+  }
+
+  .works-title.is-fading {
+    opacity: 0;                  /* hızlıca silinsin */
+  }
+
+  .works-title::after {
+    width: 40px;
+    margin: 16px auto 0;
+    opacity: 0.3;
+  }
+}
