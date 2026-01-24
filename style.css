@@ -493,6 +493,14 @@ footer {
   padding: 60px 16px;
   opacity: 0.75;
 }
+@media (max-width: 900px) {
+  .about {
+    font-size: 15px;
+    line-height: 1.45;
+    padding: 50px 18px;
+    max-width: 520px;
+  }
+}
 
 /* =========================
    WORKS – MOBİL NET GRID
