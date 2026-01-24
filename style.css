@@ -376,7 +376,7 @@ header nav a:hover::after {
   .work {
     margin: 0;
   }
-
+}
   /* Kareler */
   .work.square {
     aspect-ratio: 1 / 1;
@@ -452,18 +452,20 @@ header nav a:hover::after {
 
 .contact a:hover { opacity:1; }
 
+/* FOOTER & ALT YAZILAR */
 footer {
-  position: relative;
   width: 100%;
-  text-align: center; /* ortala */
-  padding: 20px 0;
+  padding: 30px 20px;
+  background: transparent; /* isteğe göre renk ekleyebilirsin */
   font-size: 14px;
   color: #555;
 
-  display: flex;             /* metinleri flex ile hizala */
-  flex-direction: column;    /* dikey sıralama */
-  align-items: center;       /* ortala */
-  gap: 8px;                  /* aralarındaki boşluk */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* webde satırlar arası boşluk */
+  text-align: center;
 }
 
 footer a {
@@ -474,6 +476,21 @@ footer a {
 
 footer a:hover {
   opacity: 0.8;
+}
+
+/* ALT YAZILAR İÇİN SPAN/KUTU VARSA */
+footer .footer-text {
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* MOBİL */
+@media (max-width: 900px) {
+  footer {
+    font-size: 12px;   /* daha küçük yazı */
+    gap: 10px;         /* biraz daha geniş aralık */
+    padding: 20px 16px;
+  }
 }
 
 /* IMAGE ZOOM */
