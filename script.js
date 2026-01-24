@@ -1,7 +1,21 @@
-// PRELOADER
+const isMobile = window.innerWidth <= 768;
+
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
+
+  if (window.innerWidth <= 768) {
+    const logo = document.querySelector('.logo-container');
+    if (logo) {
+      setTimeout(() => {
+        logo.style.opacity = '0';
+        logo.style.pointerEvents = 'none';
+        logo.style.height = '0';
+        logo.style.overflow = 'hidden';
+      }, 800);
+    }
+  }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -104,7 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     work.addEventListener('mouseleave', () => work.style.transform = '');
   });
 
-  // LOGO INK EFFECT
+// LOGO INK EFFECT (SADECE DESKTOP)
+if (!isMobile) {
   const logo = document.querySelector('.logo-container');
   if (logo) {
     logo.style.cursor = 'pointer';
@@ -117,12 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(ink);
         setTimeout(() => ink.remove(), 1600);
       }
-      window.addEventListener('load', () => {
-  document.body.classList.add('loaded'); // body'ye "loaded" ekle
-});
-
-    });
+   });
   }
+}
+
 
   // ABOUT CURSOR TRACE
   const about = document.querySelector('.about');
