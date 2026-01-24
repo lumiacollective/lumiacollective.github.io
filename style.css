@@ -204,6 +204,101 @@ header nav a:hover::after {
   50% { transform: translateX(-50%) translateY(-4px); }
   100% { transform: translateX(-50%) translateY(0); }
 } 
+/* =========================
+   WORKSHOPS – ÜST ÜSTE EFEKTİ (WEB + MOBİL)
+   ========================= */
+
+/* WORKSHOPS ALANI */
+.workshops {
+  padding: 120px 0 180px;
+  text-align: center;
+}
+
+.workshops h2 {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #222;
+  margin-bottom: 90px;
+  position: relative;
+}
+
+.workshops h2::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: #222;
+  opacity: 0.3;
+  display: block;
+  margin: 24px auto 0;
+}
+
+/* WORKSHOPS STACK – WEB */
+.workshops-stack {
+  display: flex;
+  justify-content: center;   /* webde ortala */
+  padding: 0 60px;
+  flex-wrap: nowrap;         /* tek satır */
+  overflow-x: visible;
+}
+
+.workshops-stack .work {
+  flex: 0 0 240px;           /* sabit genişlik */
+  margin-left: -70px;        /* üst üste binme efekti */
+  opacity: 0.5;
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+.workshops-stack .work:first-child {
+  margin-left: 0;            /* ilk eleman sola yapışık */
+}
+
+.workshops-stack .work img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* Hover efektleri – web */
+.workshops-stack .work:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  z-index: 10;
+}
+
+.workshops-stack:hover .work:not(:hover) {
+  opacity: 0.25;
+  filter: blur(1px);
+  transform: scale(0.92);
+}
+
+/* =========================
+   MOBİLDE ÜST ÜSTE (OVERLAP) EFEKTİ
+   ========================= */
+@media (max-width: 900px) {
+  .workshops-stack {
+    padding: 0 16px;
+    justify-content: flex-start; /* soldan başla */
+    overflow-x: auto;            /* yatay kaydırma */
+  }
+
+  .workshops-stack .work {
+    flex: 0 0 200px;    /* mobilde biraz daha küçük */
+    margin-left: -40px; /* overlap azaltıldı */
+    opacity: 0.6;
+  }
+
+  .workshops-stack .work:first-child {
+    margin-left: 0;
+  }
+
+  .workshops-stack .work img {
+    height: 280px;
+  }
+}
 
 /* =========================
    WORKS – WEB DÜZEN
@@ -295,69 +390,6 @@ header nav a:hover::after {
     height: 100%;
     object-fit: cover;
   }
-}
-/* WORKSHOPS – ÜST ÜSTE EFEKTİ */
-.workshops-stack {
-  display: flex;
-  justify-content: center;
-  padding: 0 60px;
-  flex-wrap: nowrap; /* tek satır */
-}
-
-.workshops-stack .work {
-  flex: 0 0 240px;          /* sabit genişlik */
-  margin-left: -70px;        /* üst üste binme efekti */
-  opacity: 0.5;
-  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
-}
-
-.workshops-stack .work:first-child {
-  margin-left: 0;            /* ilk eleman sola yapışık */
-}
-
-.workshops-stack .work img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-}
-
-/* Hover efektleri */
-.workshops-stack .work:hover {
-  transform: scale(1.15);
-  opacity: 1;
-  z-index: 10;
-}
-
-.workshops-stack:hover .work:not(:hover) {
-  opacity: 0.25;
-  filter: blur(1px);
-  transform: scale(0.92);
-}
-
-/* MOBİLDE ÜST ÜSTE EFEKTİ KORU */
-@media (max-width: 900px) {
-  .workshops-stack {
-    padding: 0 16px;
-    justify-content: flex-start;
-    overflow-x: auto;   /* kaydırmalı yap */
-  }
-
-  .workshops-stack .work {
-    flex: 0 0 200px;    /* biraz daha küçük */
-    margin-left: -40px; /* overlap azaltıldı */
-    opacity: 0.6;
-  }
-
-  .workshops-stack .work:first-child {
-    margin-left: 0;
-  }
-
-  .workshops-stack .work img {
-    height: 280px;
-  }
-
 
   .works-title {
     text-align: center; /* başlık ortada mobilde de */
@@ -367,70 +399,6 @@ header nav a:hover::after {
 
 
 
-/* WORKSHOPS */
-.workshops {
-  padding: 120px 0 180px;
-  text-align: center;
-}
-
-.workshops h2 {
-  font-size: 26px;
-  font-weight: 300;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #222;
-  margin-bottom: 90px;
-  position: relative;
-}
-
-.workshops h2::after {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: #222;
-  opacity: 0.3;
-  display: block;
-  margin: 24px auto 0;
-}
-
-/* WORKSHOPS – ESKİ ÜST ÜSTE STYLE */
-.workshops-stack {
-  display: flex;
-  justify-content: center;
-  padding: 0 60px;
-  flex-wrap: nowrap;
-}
-
-.workshops-stack .work {
-  flex: 0 0 240px;
-  margin-left: -70px; /* overlap efekti */
-  opacity: 0.5;
-  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
-}
-
-.workshops-stack .work:first-child {
-  margin-left: 0;
-}
-
-.workshops-stack .work img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-}
-
-.workshops-stack .work:hover {
-  transform: scale(1.15);
-  opacity: 1;
-  z-index: 10;
-}
-
-.workshops-stack:hover .work:not(:hover) {
-  opacity: 0.25;
-  filter: blur(1px);
-  transform: scale(0.92);
-}
 
 /* ABOUT */
 .about {
