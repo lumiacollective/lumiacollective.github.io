@@ -310,7 +310,7 @@ header nav a:hover::after {
 
 /* WORKSHOPS */
 .workshops {
-  padding: 80px 0 160px;
+  padding: 120px 0 180px;
   text-align: center;
 }
 
@@ -320,53 +320,58 @@ header nav a:hover::after {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #222;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
   position: relative;
 }
 
 .workshops h2::after {
-  content:"";
+  content: "";
   width: 40px;
-  height:1px;
-  background:#222;
-  opacity:0.3;
-  display:block;
-  margin:20px auto 0;
+  height: 1px;
+  background: #222;
+  opacity: 0.3;
+  display: block;
+  margin: 24px auto 0;
 }
 
+/* STACK */
 .workshops-stack {
   display: flex;
   justify-content: center;
-  padding:0 60px;
+  align-items: center;
+  padding: 0 60px;
 }
 
 .workshops-stack .work {
   flex: 0 0 240px;
-  margin-left: -70px;
-  opacity:0.5;
-  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+  margin-left: -80px;
+  opacity: 0.45;
+  transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
 }
 
-.workshops-stack .work:first-child { margin-left:0; }
+.workshops-stack .work:first-child {
+  margin-left: 0;
+}
 
 .workshops-stack .work img {
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:12px;
-  box-shadow:0 30px 60px rgba(0,0,0,0.15);
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
 }
 
+/* HOVER DAVRANIŞI */
 .workshops-stack .work:hover {
-  transform: scale(1.15);
-  opacity:1;
-  z-index:10;
+  transform: scale(1.18);
+  opacity: 1;
+  z-index: 10;
 }
 
 .workshops-stack:hover .work:not(:hover) {
-  opacity:0.25;
-  filter:blur(1px);
-  transform:scale(0.92);
+  opacity: 0.22;
+  filter: blur(1.2px);
+  transform: scale(0.9);
 }
 
 /* ABOUT */
@@ -489,6 +494,7 @@ footer {
 
 /* RESPONSIVE - MOBİL */
 @media (max-width: 900px) {
+
   /* HEADER */
   header { padding:20px 30px; }
   .main-nav { gap: 20px; font-size:14px; }
@@ -498,6 +504,7 @@ footer {
   .hero-image-area { height:50vh; }
   .hero-image-area img { height:100%; object-fit:cover; }
 
+  /* WORKS */
   .works {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -512,17 +519,6 @@ footer {
       "w9 w10"
       "w11 w11"
       "w12 w12";
-  }
-
-  /* RESET – grid-area bozan şeyleri kapat */
-  .works .work {
-    width: auto;
-  }
-
-  .works .work.square,
-  .works .work.horizontal {
-    grid-column: auto;
-    aspect-ratio: auto;
   }
 
   /* GRID AREAS */
@@ -540,12 +536,31 @@ footer {
   .w12 { grid-area: w12; }
 
 }
+
   /* WORKSHOPS */
   .workshops-stack { padding:0 20px; flex-wrap:wrap; gap:16px; justify-content:center; }
   .workshops-stack .work { flex:0 0 45%; margin-left:0; opacity:1; }
  .workshops-stack .work:hover {
     transform: translateY(-6px) scale(1.03);
   }
+  /* WORKSHOPS – MOBİL */
+@media (max-width: 768px) {
+  .workshops-stack {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .workshops-stack .work {
+    margin: 0 0 24px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .workshops-stack .work img {
+    height: auto;
+  }
+}
+
   /* PRELOADER */
   #preloader { display:none !important; }
   .preloader-logo { animation:none !important; }
@@ -557,3 +572,41 @@ footer {
     opacity: 0.75;
   }
 
+/* WORKS – MOBİL (768px altı) */
+@media (max-width: 768px) {
+
+  .works {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolon */
+    gap: 10px;
+    padding: 50px 14px 70px;
+    grid-template-areas:
+      "w1 w2"
+      "w3 w4"
+      "w5 w5"
+      "w6 w7"
+      "w8 w9"
+      "w10 w10"; /* istersen daha fazla ekleyebilirsin */
+  }
+
+  /* GRID AREAS */
+  .w1 { grid-area: w1; }
+  .w2 { grid-area: w2; }
+  .w3 { grid-area: w3; }
+  .w4 { grid-area: w4; }
+  .w5 { grid-area: w5; } /* horizontal tek fotoğraf */
+  .w6 { grid-area: w6; }
+  .w7 { grid-area: w7; }
+  .w8 { grid-area: w8; }
+  .w9 { grid-area: w9; }
+  .w10 { grid-area: w10; }
+
+  .works .work img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+}
