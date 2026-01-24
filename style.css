@@ -206,10 +206,9 @@ header nav a:hover::after {
 } 
 
 /* =========================
-   WORKS – WEB (İSTENEN DÜZEN)
+   WORKS – WEB DÜZEN
    ========================= */
 @media (min-width: 900px) {
-
   .works {
     padding: 150px 60px 160px;
     max-width: 1400px;
@@ -223,7 +222,6 @@ header nav a:hover::after {
   .work.square {
     aspect-ratio: 1 / 1;
   }
-
   .work.square img {
     width: 100%;
     height: 100%;
@@ -232,10 +230,9 @@ header nav a:hover::after {
 
   /* YATAYLAR */
   .work.horizontal {
-    grid-column: span 2; /* 👈 kilit nokta */
+    grid-column: span 2;
     aspect-ratio: 3 / 1;
   }
-
   .work.horizontal img {
     width: 100%;
     height: 100%;
@@ -246,7 +243,6 @@ header nav a:hover::after {
   .work {
     transition: transform .3s ease;
   }
-
   .work:hover {
     transform: translateY(-6px);
   }
@@ -257,12 +253,91 @@ header nav a:hover::after {
     transform: translateY(15px);
     transition: opacity .4s ease, transform .4s ease;
   }
-
   .work:hover .work-meta {
     opacity: 1;
     transform: translateY(0);
   }
+
+  .works-title {
+    text-align: center; /* ortala webde */
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin: 140px auto 80px;
+  }
 }
+
+/* =========================
+   WORKS – MOBİL DÜZEN
+   ========================= */
+@media (max-width: 900px) {
+
+  .works {
+    padding: 80px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .work {
+    margin: 0;
+  }
+
+  /* KARELER – biraz daha büyük */
+  .work.square img {
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* YATAYLAR – kenarlardan boşluk */
+  .work.horizontal {
+    grid-column: 1 / -1;
+    aspect-ratio: 3 / 1;
+  }
+  .work.horizontal img {
+    height: 200px;
+    width: auto;
+    max-width: calc(100% - 32px);
+    object-fit: cover;
+  }
+
+  /* WORKSHOPS – üst üste binme hafifletildi */
+  .workshops-stack {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0 16px;
+  }
+
+  .workshops-stack .work {
+    margin-left: 0;
+    margin-bottom: -40px;
+    opacity: 1;
+    transform: none;
+  }
+
+@media (max-width: 900px) {
+  .workshops-stack .work.square img {
+    height: 360px;
+  }
+
+  .workshops-stack .work.horizontal img {
+    height: 200px;
+    max-width: calc(100% - 32px);
+    width: auto;
+  }
+}
+
+
+  .works-title {
+    text-align: center; /* başlık ortada mobilde de */
+    font-size: 26px;
+    margin: 120px auto 60px;
+  }
+}
+
 
 /* WORKSHOPS */
 .workshops {
@@ -457,40 +532,7 @@ footer {
   .hero-text-area h1 { font-size: 38px; }
   .hero-image-area { height: 50vh; }
   .hero-image-area img { height: 100%; object-fit: cover; }
-}
-
-/* ===================== */
-@media (max-width: 900px) {
-  .workshops-stack {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0; /* üst üste binme efekti için sıfır, margin ile kontrol edilecek */
-    padding: 0 16px; /* kenarlardan boşluk */
-  }
-
-  .workshops-stack .work {
-    margin-left: 0;
-    margin-bottom: -40px; /* üst üste binme hafifletildi (-60px yerine) */
-    opacity: 1;
-    transform: none;
-  }
-
-  /* Kareleri biraz büyüt */
-  .workshops-stack .work.square img {
-    height: 360px; /* önce 320px idi */
-  }
-
-  /* Yatay görseller ekrana tam sığmasın */
-  .workshops-stack .work.horizontal img {
-    height: 200px;
-    width: auto;
-    max-width: calc(100% - 32px); /* kenarlardan boşluk */
-  }
-}
-
-/* ===================== */
-/* PRELOADER */
+ }
 /* ===================== */
 #preloader { display:none !important; }
 .preloader-logo { animation:none !important; }
@@ -546,11 +588,12 @@ footer {
     aspect-ratio: 3 / 1;
   }
 
-  .work.horizontal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+ .work.horizontal img {
+  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
 
 }.works-title {
   text-align: center;
