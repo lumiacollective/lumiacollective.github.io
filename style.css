@@ -566,6 +566,7 @@ footer span {
   .main-nav { gap: 20px; font-size: 14px; }
 
   /* HERO */
+<<<<<<< HEAD
   .hero-text-area h1 { font-size: 38px; }
   .hero-image-area { height: 50vh; }
   .hero-image-area img { height: 100%; object-fit: cover; }
@@ -573,6 +574,52 @@ footer span {
 /* ===================== */
 #preloader { display:none !important; }
 .preloader-logo { animation:none !important; }
+=======
+  .hero-text-area h1 { font-size:38px; }
+  .hero-image-area { height:50vh; }
+  .hero-image-area img { height:100%; object-fit:cover; }
+
+  .works {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 80px 20px 100px;
+    grid-template-areas:
+      "w1 w2"
+      "w3 w4"
+      "w5 w5"
+      "w6 w6"
+      "w7 w8"
+      "w9 w10"
+      "w11 w11"
+      "w12 w12";
+  }
+
+  /* RESET – grid-area bozan şeyleri kapat */
+  .works .work {
+    width: auto;
+  }
+
+  .works .work.square,
+  .works .work.horizontal {
+    grid-column: auto;
+    aspect-ratio: auto;
+  }
+
+  /* GRID AREAS */
+  .w1 { grid-area: w1; }
+  .w2 { grid-area: w2; }
+  .w3 { grid-area: w3; }
+  .w4 { grid-area: w4; }
+  .w5 { grid-area: w5; }
+  .w6 { grid-area: w6; }
+  .w7 { grid-area: w7; }
+  .w8 { grid-area: w8; }
+  .w9 { grid-area: w9; }
+  .w10 { grid-area: w10; }
+  .w11 { grid-area: w11; }
+  .w12 { grid-area: w12; }
+>>>>>>> 00ad38f (Web düzeni güncellendi)
 
 /* ===================== */
 /* ABOUT MOBİL AYAR */
@@ -599,11 +646,23 @@ footer span {
     margin: 0 auto;
   }
 }
+<<<<<<< HEAD
 
 /* =========================
    WORKS – MOBİL NET GRID
    ========================= */
 @media (max-width: 900px) {
+=======
+  /* WORKSHOPS */
+  .workshops-stack { padding:0 20px; flex-wrap:wrap; gap:16px; justify-content:center; }
+  .workshops-stack .work { flex:0 0 45%; margin-left:0; opacity:1; }
+ .workshops-stack .work:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
+  /* PRELOADER */
+  #preloader { display:none !important; }
+  .preloader-logo { animation:none !important; }
+>>>>>>> 00ad38f (Web düzeni güncellendi)
 
   .works {
     display: grid;
