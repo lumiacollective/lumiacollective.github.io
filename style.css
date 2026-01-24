@@ -11,7 +11,7 @@ body {
   background: #ffffff;
   color: #111;
   font-family: 'Cormorant Garamond', serif;
-  padding-top: 120px; /* HEADER yüksekliği kadar */
+  padding-top: 120px; 
 }
 
 /* =========================
@@ -72,9 +72,7 @@ body.loaded .preloader-logo {
   animation: none;
 }
 
-/* =========================
-   HEADER
-========================= */
+
 header {
   position: fixed;
   top: 0;
@@ -654,6 +652,7 @@ footer span {
     justify-content: center;
     padding: 0 20px;
   }
+}
 
   .workshops-stack .work {
     flex: 0 0 45%;
@@ -666,23 +665,30 @@ footer span {
     transform: translateY(-6px) scale(1.03);
   }
 
-<<<<<<< HEAD
    .hero-detail-btn {
     transform: translateX(-50%) scale(0.95);
-=======
+
 }
 @media (max-width: 768px) {
   .hero-detail-btn {
-    bottom: 26px;                 /* ⬅️ hero görseline daha yakın */
+    bottom: 40px;                 /* ⬅️ biraz daha yukarı */
     transform: translateX(-50%) scale(0.92);
     font-size: 10px;
     letter-spacing: 2.5px;
     padding: 12px 22px;
     opacity: 0.85;
->>>>>>> 2252d61 (Kodlar güncellendi ve web yayına alındı)
+
   }
+}
 
   .works {
+
+
+/* =========================
+   RESPONSIVE 768px altı
+========================= */
+@media (max-width: 768px) {
+ .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
@@ -710,10 +716,9 @@ footer span {
     padding: 15px 10px; 
   }
 
-<<<<<<< HEAD
+
   #preloader { display: none !important; }
    .preloader-logo { animation: none !important; }
-=======
   .contact {
     margin-top: 40px;
   }
@@ -742,7 +747,6 @@ footer span {
     visibility: hidden;
     transition: opacity 0.4s ease;
   }
->>>>>>> 14f5eed (Kodlar güncellendi)
 }
 
 /* MOBİL – LOGO SADECE SAYFA YÜKLENİRKEN GÖRÜNSÜN */
