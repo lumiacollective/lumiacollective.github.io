@@ -560,7 +560,7 @@ footer span {
 }
 @media (max-width: 768px) {
   .hero-detail-btn {
-    bottom: 26px;                 /* ⬅️ hero görseline daha yakın */
+    bottom: 40px;                 /* ⬅️ biraz daha yukarı */
     transform: translateX(-50%) scale(0.92);
     font-size: 10px;
     letter-spacing: 2.5px;
@@ -568,6 +568,7 @@ footer span {
     opacity: 0.85;
   }
 }
+
 
 /* =========================
    RESPONSIVE 768px altı
