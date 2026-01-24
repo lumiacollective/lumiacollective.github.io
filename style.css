@@ -460,21 +460,32 @@ footer {
 }
 
 /* ===================== */
-/* ATÖLYELER – MOBİL DÜZEN */
-/* ===================== */
 @media (max-width: 900px) {
   .workshops-stack {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap; /* üst üste binme için wrap kapalı */
-    gap: 0;
+    flex-wrap: nowrap;
+    gap: 0; /* üst üste binme efekti için sıfır, margin ile kontrol edilecek */
+    padding: 0 16px; /* kenarlardan boşluk */
   }
 
   .workshops-stack .work {
     margin-left: 0;
-    margin-bottom: -60px; /* üst üste binme efekti */
+    margin-bottom: -40px; /* üst üste binme hafifletildi (-60px yerine) */
     opacity: 1;
     transform: none;
+  }
+
+  /* Kareleri biraz büyüt */
+  .workshops-stack .work.square img {
+    height: 360px; /* önce 320px idi */
+  }
+
+  /* Yatay görseller ekrana tam sığmasın */
+  .workshops-stack .work.horizontal img {
+    height: 200px;
+    width: auto;
+    max-width: calc(100% - 32px); /* kenarlardan boşluk */
   }
 }
 
