@@ -559,3 +559,22 @@ footer span {
   #preloader { display: none !important; }
   .preloader-logo { animation: none !important; }
 }
+/* MOBİL – LOGO SADECE SAYFA YÜKLENİRKEN GÖRÜNSÜN */
+@media (max-width: 768px) {
+  .intro-logo {
+    animation: introFadeOut 1.2s ease forwards;
+    animation-delay: 1.2s;
+  }
+
+  .logo-container {
+    position: static !important;
+  }
+}
+
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
