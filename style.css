@@ -571,10 +571,8 @@ footer span {
   }
 }
 
-@keyframes introFadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+@media (max-width: 768px) {
+  .logo-container {
+    transition: opacity 0.5s ease;
   }
 }
