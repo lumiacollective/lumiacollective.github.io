@@ -666,8 +666,20 @@ footer span {
     transform: translateY(-6px) scale(1.03);
   }
 
+<<<<<<< HEAD
    .hero-detail-btn {
     transform: translateX(-50%) scale(0.95);
+=======
+}
+@media (max-width: 768px) {
+  .hero-detail-btn {
+    bottom: 26px;                 /* ⬅️ hero görseline daha yakın */
+    transform: translateX(-50%) scale(0.92);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    padding: 12px 22px;
+    opacity: 0.85;
+>>>>>>> 2252d61 (Kodlar güncellendi ve web yayına alındı)
   }
 
   .works {
