@@ -596,9 +596,29 @@ footer span {
 
   footer { font-size: 13px; padding: 15px 10px; }
   
-  #preloader { display: none !important; }
-  .preloader-logo { animation: none !important; }
+@media (max-width: 768px) {
+
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+  }
+
+  .preloader-logo {
+    animation: spin 1.2s linear infinite;
+  }
+
+  body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+  }
 }
+
 /* MOBİL – LOGO SADECE SAYFA YÜKLENİRKEN GÖRÜNSÜN */
 @media (max-width: 768px) {
   .intro-logo {
