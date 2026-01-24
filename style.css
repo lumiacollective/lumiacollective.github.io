@@ -204,12 +204,12 @@ header nav a:hover::after {
   50% { transform: translateX(-50%) translateY(-4px); }
   100% { transform: translateX(-50%) translateY(0); }
 }
-
-/* WORKS */
+/* ===================== */
+/* WORKS – DESKTOP */
 .works {
   padding: 150px 60px 160px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); /* otomatik kolon */
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -261,6 +261,7 @@ header nav a:hover::after {
   width: 100%;
   border-radius: 12px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: cover;
 }
 
 .works .work:hover {
@@ -270,9 +271,10 @@ header nav a:hover::after {
 }
 
 .work.horizontal { grid-column: span 2; }
-.work.square img { aspect-ratio: 1/1; object-fit: cover; }
-.work.horizontal img { aspect-ratio: 3/1; object-fit: cover; }
+.work.square img { aspect-ratio: 1/1; }
+.work.horizontal img { aspect-ratio: 3/1; }
 
+/* WORK META */
 .work-meta {
   position: absolute;
   inset: 0;
@@ -306,6 +308,41 @@ header nav a:hover::after {
 .work-meta span:last-child {
   font-size: 11px;
   opacity: .85;
+}
+
+/* ===================== */
+/* WORKS – MOBİL */
+@media (max-width: 768px) {
+  .works {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* kesin 2 kolon */
+    gap: 10px; /* kareler ve horizontal arasında boşluk */
+    padding: 50px 14px 70px;
+  }
+
+  .work.square {
+    grid-column: span 1; /* 1 kolon */
+  }
+
+  .work.horizontal {
+    grid-column: 1 / -1; /* 2 kolon boyunca */
+  }
+
+  /* Görsellerin boyutu ve oranı */
+  .works .work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .work.square img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .work.horizontal img {
+    aspect-ratio: 3 / 1;
+  }
 }
 
 /* WORKSHOPS */
@@ -537,38 +574,4 @@ footer {
   padding: 60px 16px;
   opacity: 0.75;
 }
-
-/* ===================== */
-/* WORKS – MOBİL GRID */
-@media (max-width: 768px) {
-  .works {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 sütun */
-    gap: 10px; /* kareler arasındaki boşluk */
-    padding: 50px 14px 70px; /* container padding */
-  }
-
-  /* Kare görseller */
-  .work.square {
-    grid-column: span 1; /* 1 sütun kaplasın */
-  }
-  .work.square img {
-    aspect-ratio: 1/1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  /* Yatay (horizontal) görseller */
-  .work.horizontal {
-    grid-column: 1 / -1; /* 2 sütun boyunca uzansın */
-  }
-  .work.horizontal img {
-    aspect-ratio: 3 / 1; /* yatay oran */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-}
+ 
