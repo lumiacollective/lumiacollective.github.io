@@ -284,54 +284,66 @@ header nav a:hover::after {
 }
 
 /* =========================
-   WORKS GRID
+   WORKS GRID – WEB (900px ve üzeri)
 ========================= */
-.works-title {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 300;
-  letter-spacing: 4px;
-  margin: 140px auto 80px;
-}
+@media (min-width: 900px) {
 
-.works {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 240px;
-  gap: 36px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 150px 60px 160px;
-}
+  .works-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin: 140px auto 80px;
+  }
 
-.work.square {
-  aspect-ratio: 1 / 1;
-}
+  .works {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 görsel üst satır */
+    grid-auto-rows: auto; /* yüksekliği otomatik, aspect-ratio ile kontrol */
+    gap: 36px; /* satır ve sütun arası boşluk */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 150px 60px 160px;
+  }
 
-.work.horizontal {
-  aspect-ratio: 2 / 1;
-}
+  /* Kare görseller */
+  .work.square {
+    aspect-ratio: 1 / 1;
+  }
 
-.work img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  /* Yatay görseller – 2 kolon genişliği */
+  .work.horizontal {
+    aspect-ratio: 2 / 1;
+    grid-column: span 2;
+  }
 
-.work:hover {
-  transform: translateY(-6px);
-  z-index: 10;
-}
+  /* Görsellerin boyutu ve kapsayıcı */
+  .work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
 
-.work-meta {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
+  /* Hover efekti */
+  .work:hover {
+    transform: translateY(-6px);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
 
-.work:hover .work-meta {
-  opacity: 1;
-  transform: translateY(0);
+  /* Meta bilgiler */
+  .work-meta {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .work:hover .work-meta {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================
