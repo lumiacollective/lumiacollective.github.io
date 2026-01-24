@@ -296,35 +296,67 @@ header nav a:hover::after {
     object-fit: cover;
   }
 }
+/* WORKSHOPS – ÜST ÜSTE EFEKTİ */
+.workshops-stack {
+  display: flex;
+  justify-content: center;
+  padding: 0 60px;
+  flex-wrap: nowrap; /* tek satır */
+}
 
+.workshops-stack .work {
+  flex: 0 0 240px;          /* sabit genişlik */
+  margin-left: -70px;        /* üst üste binme efekti */
+  opacity: 0.5;
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
 
-  /* WORKSHOPS – üst üste binme hafifletildi */
+.workshops-stack .work:first-child {
+  margin-left: 0;            /* ilk eleman sola yapışık */
+}
+
+.workshops-stack .work img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* Hover efektleri */
+.workshops-stack .work:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  z-index: 10;
+}
+
+.workshops-stack:hover .work:not(:hover) {
+  opacity: 0.25;
+  filter: blur(1px);
+  transform: scale(0.92);
+}
+
+/* MOBİLDE ÜST ÜSTE EFEKTİ KORU */
+@media (max-width: 900px) {
   .workshops-stack {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0;
     padding: 0 16px;
+    justify-content: flex-start;
+    overflow-x: auto;   /* kaydırmalı yap */
   }
 
   .workshops-stack .work {
+    flex: 0 0 200px;    /* biraz daha küçük */
+    margin-left: -40px; /* overlap azaltıldı */
+    opacity: 0.6;
+  }
+
+  .workshops-stack .work:first-child {
     margin-left: 0;
-    margin-bottom: -40px;
-    opacity: 1;
-    transform: none;
   }
 
-@media (max-width: 900px) {
-  .workshops-stack .work.square img {
-    height: 360px;
+  .workshops-stack .work img {
+    height: 280px;
   }
-
-  .workshops-stack .work.horizontal img {
-    height: 200px;
-    max-width: calc(100% - 32px);
-    width: auto;
-  }
-}
 
 
   .works-title {
