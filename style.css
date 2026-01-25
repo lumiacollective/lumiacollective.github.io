@@ -996,6 +996,7 @@ footer span {
     transition: opacity 0.5s ease;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   .fade-scroll  {
     opacity: 1 !important;
@@ -1167,3 +1168,11 @@ footer span {
 =======
 } 
 >>>>>>> d42e183 (Tüm değişiklikler eklendi)
+=======
+   
+  .fade-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+} 
+>>>>>>> 5851614 (logo düzeltildi)
