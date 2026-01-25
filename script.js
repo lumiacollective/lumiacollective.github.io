@@ -210,4 +210,16 @@ if (heroImg) {
     overlay.addEventListener('click', () => overlay.remove());
   });
 }
+<<<<<<< HEAD
 >>>>>>> 0ed10af (hero düzeltildi)
+=======
+const heroImages = Array.from(document.querySelectorAll('.hero-lightbox'));
+const heroBtn = document.querySelector('.hero-detail-btn');
+
+if (heroBtn && heroImages.length) {
+  heroBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openLightbox(heroImages.map(img => img.src), 0);
+  });
+}
+>>>>>>> 01332f4 (düzeltildi)
