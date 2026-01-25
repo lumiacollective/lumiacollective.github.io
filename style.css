@@ -1,5 +1,5 @@
 
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -367,17 +367,9 @@ header nav a:hover::after {
 }
 
 
-.about {
-  position: relative;
-  overflow: hidden;
-  max-width: 650px;
-  margin: 100px auto 120px;
-  padding: 80px 20px;
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.45;
-  opacity: .85;
-}
+.about { position:relative; overflow:hidden; max-width:650px; margin:100px auto 120px; padding:80px 20px; text-align:center; font-size:20px; line-height:1.45; opacity:.85; }
+.about .cursor-trace { position:absolute; width:120px; height:120px; border-radius:50%; background:radial-gradient(circle, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.04) 55%, transparent 70%); pointer-events:none; transform:translate(-50%,-50%); opacity:0; transition:opacity .4s ease; mix-blend-mode:multiply; z-index:10; filter:blur(8px); }
+
 
 .about .cursor-trace {
   position: absolute;
@@ -405,6 +397,7 @@ header nav a:hover::after {
 
 .contact a {
   font-size: 16px;
+  font-size: 16 px;
   text-decoration: none;
   color: #111;
   transition: opacity 0.3s ease;
@@ -496,6 +489,7 @@ footer span {
     object-fit: cover;
   }
 
+
   /* CONTACT & FOOTER */
   .contact,
   footer {
@@ -537,7 +531,6 @@ footer span {
     opacity: 0.85;
   }
 
-  /* ----------------- WORKS GRID (KRİTİK) ----------------- */
   .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -558,7 +551,7 @@ footer span {
     border-radius: 8px;
   }
 
-  /* 🔥 MOBİLDE GÖRSEL KİLİDİNİ TAM AÇ */
+
   .works,
   .works .work,
   .works .work img {
@@ -566,6 +559,7 @@ footer span {
     transform: none !important;
     visibility: visible !important;
   }
+
 
 }
 
@@ -592,7 +586,7 @@ footer span {
     opacity: 0.3;
   }
 
-  /* ----------------- ABOUT ----------------- */
+
   .about {
     column-count: 1;
     max-width: 100%;
@@ -601,7 +595,6 @@ footer span {
     text-align: center;
   }
 
-  /* ----------------- CONTACT & FOOTER ----------------- */
   .contact {
     margin-top: 0 !important;
   }
@@ -611,7 +604,7 @@ footer span {
     padding: 15px 10px;
   }
 
-  /* ----------------- PRELOADER ----------------- */
+  
   #preloader {
     position: fixed;
     inset: 0;
@@ -642,7 +635,6 @@ footer span {
 
 }
 
-  /* ----------------- LOGO INTRO ----------------- */
   .intro-logo {
     animation: introFadeOut 1.2s ease forwards;
     animation-delay: 1.2s;
@@ -656,10 +648,26 @@ footer span {
   .fade-scroll  {
     opacity: 1 !important;
     transform: none !important;
+}
+
+
+
+.contact {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .about {
+    column-count: 1;
+    max-width: 6470px;
+    margin: 120px auto 80px;
+    padding: 0 20px;
+    text-align: center;
+     columns: 1;
+    column-gap: 80px;
   }
   
 
-  @media (max-width: 768px) {
   header {
     opacity: 0;
     pointer-events: none;
@@ -704,6 +712,8 @@ footer span {
   }
 }
 
+@media (max-width: 768px) {
+
 .ink {
   position: fixed;
   width: 120px;
@@ -718,7 +728,7 @@ footer span {
   mix-blend-mode: multiply;
   z-index: 9999;
 }
-
+}
 @keyframes inkSpread {
   from {
     transform: scale(0.2);
@@ -728,7 +738,7 @@ footer span {
     transform: scale(2.5);
     opacity: 0;
   }
-}/* FORCE PRELOADER CENTER – NOKTA */
+}
 #preloader {
   position: fixed !important;
   top: 0 !important;
@@ -743,7 +753,7 @@ footer span {
   left: 50% !important;
   transform: translate(-50%, -50%) rotate(0deg) !important;
 }
-/* ====== HARD RESET PRELOADER (SON NOKTA) ====== */
+
 #preloader {
   position: fixed !important;
   inset: 0 !important;
