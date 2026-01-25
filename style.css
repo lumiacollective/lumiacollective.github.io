@@ -703,4 +703,14 @@ footer span {
     opacity: 1;
     pointer-events: auto;
   }
+  @media (max-width: 768px) {
+  .works,
+  .works .work,
+  .works .work img {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
+
 }
