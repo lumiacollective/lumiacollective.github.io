@@ -894,6 +894,7 @@ footer span {
   header {
     opacity: 0;
     pointer-events: none;
+
   }
 
   body.loaded header {
@@ -913,13 +914,15 @@ footer span {
   .preloader-logo {
     width: 64px;
     animation: spin 0.9s linear infinite;
+
   }
 
-  body.loaded #preloader {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.35s ease;
+  body.loaded header {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s ease;
   }
+
 
   .intro-logo {
     animation: introFadeOut 1.2s ease forwards;

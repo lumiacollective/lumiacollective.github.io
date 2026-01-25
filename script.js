@@ -114,11 +114,8 @@ if (!isMobile) {
   });
 }
 
-<<<<<<< HEAD
-=======
   document.addEventListener('click', (e) => {
 
-  // Header / link tıklamalarında aşırı boya istemiyorsan:
   if (e.target.closest('a, button, nav')) return;
 
   const colors = [
