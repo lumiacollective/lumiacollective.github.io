@@ -642,16 +642,18 @@ footer span {
     z-index: 5000;
   }
 
-  .preloader-logo {
-    width: 64px;
-    animation: spin 0.9s linear infinite;
+@media (max-width: 768px) {
+  header {
+    opacity: 0;
+    pointer-events: none;
   }
 
-  body.loaded #preloader {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.35s ease;
+  body.loaded header {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s ease;
   }
+}
 
   /* ----------------- LOGO INTRO ----------------- */
   .intro-logo {
