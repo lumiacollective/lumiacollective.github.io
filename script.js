@@ -102,7 +102,6 @@ window.addEventListener("load", () => {
 // SCROLL FADE
 const isMobile = window.innerWidth <= 768;
 
-<<<<<<< HEAD
 document.querySelectorAll(".fade-scroll").forEach(el => {
   observer.observe(el);
 });
@@ -115,7 +114,7 @@ document.querySelector('.hero-detail-btn')?.addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('.hero-lightbox')?.click();
 });
-=======
+
 if (!isMobile) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -134,4 +133,4 @@ if (!isMobile) {
     el.classList.add("visible");
   });
 }
->>>>>>> f2a095a (logo düzeltildi)
+
