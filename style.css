@@ -581,6 +581,7 @@ footer span {
 
 /* ========================= MOBİL – 768px altı ========================= */
 @media (max-width: 768px) {
+
   /* ----------------- HERO ----------------- */
   .hero-detail-btn {
     bottom: 64px;
@@ -596,11 +597,11 @@ footer span {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
-    margin-top: 20px; /* observer için nefes alanı */
+    margin-top: 20px;
   }
 
   .works .work {
-    aspect-ratio: 1 / 1; /* ⬅️ ASIL ÇÖZÜM */
+    aspect-ratio: 1 / 1;
     width: 100%;
     overflow: hidden;
   }
@@ -611,6 +612,17 @@ footer span {
     object-fit: cover;
     border-radius: 8px;
   }
+
+  /* 🔥 MOBİLDE GÖRSEL KİLİDİNİ TAM AÇ */
+  .works,
+  .works .work,
+  .works .work img {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+}
 
   /* ----------------- WORKS TITLE ----------------- */
   .works-title {
@@ -690,7 +702,7 @@ footer span {
     opacity: 1 !important;
     transform: none !important;
   }
-  }
+  
 
   @media (max-width: 768px) {
   header {
@@ -703,14 +715,7 @@ footer span {
     opacity: 1;
     pointer-events: auto;
   }
-  @media (max-width: 768px) {
-  .works,
-  .works .work,
-  .works .work img {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
+
+ 
 }
 
-}
