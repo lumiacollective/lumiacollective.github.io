@@ -544,9 +544,8 @@ footer span {
 
 /* HOVER */
 .work:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
-  z-index: 5;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 /* Meta bilgiler */
