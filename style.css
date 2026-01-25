@@ -73,6 +73,15 @@ body.loaded .preloader-logo {
   animation: none;
 }
 
+/* PRELOADER LOGOSUNU HEADER'DAN TAMAMEN KOPAR */
+#preloader .preloader-logo {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 auto;
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -654,6 +663,13 @@ footer span {
     pointer-events: auto;
     transition: opacity 0.4s ease;
   }
+  @media (max-width: 768px) {
+  header .logo,
+  header .logo-container {
+    display: none !important;
+  }
+}
+
 }
 
   /* ----------------- LOGO INTRO ----------------- */
