@@ -516,12 +516,24 @@ footer span {
   .workshops-stack .work:hover {
     transform: translateY(-6px) scale(1.03);
   }
+<<<<<<< HEAD
 }
 
 
 @media (max-width: 768px) {
 
 
+=======
+
+/* =========================
+   MOBİL – 768px altı
+========================= */
+@media (max-width: 768px) {
+
+  /* -----------------
+     HERO
+  ----------------- */
+>>>>>>> ff5ff3e (logo düzeltildi)
   .hero-detail-btn {
     bottom: 64px;
     transform: translateX(-50%) scale(0.92);
@@ -531,10 +543,17 @@ footer span {
     opacity: 0.85;
   }
 
+<<<<<<< HEAD
+=======
+  /* -----------------
+     WORKS GRID (KRİTİK)
+  ----------------- */
+>>>>>>> ff5ff3e (logo düzeltildi)
   .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
+<<<<<<< HEAD
     margin-top: 20px;
   }
 
@@ -542,16 +561,44 @@ footer span {
     aspect-ratio: 1 / 1;
     width: 100%;
     overflow: hidden;
+=======
+    margin-top: 20px; /* observer için nefes alanı */
+>>>>>>> ff5ff3e (logo düzeltildi)
   }
+
+  .works .work {
+    aspect-ratio: 1 / 1;       /* ⬅️ ASIL ÇÖZÜM */
+    width: 100%;
+    overflow: hidden;
+  }
+  
 
   .works .work img {
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ff5ff3e (logo düzeltildi)
     object-fit: cover;
     border-radius: 8px;
   }
 
+  /* -----------------
+     WORKS TITLE
+  ----------------- */
+  .works-title {
+    position: relative;
+    top: auto;
+    margin-bottom: 24px;
+    font-size: 16px;
+    letter-spacing: 4px;
+    opacity: 0.45;
+    transform: none;
+    transition: opacity 0.2s ease-out;
+  }
 
+<<<<<<< HEAD
   .works,
   .works .work,
   .works .work img {
@@ -587,6 +634,21 @@ footer span {
   }
 
 
+=======
+  .works-title.is-fading {
+    opacity: 0;
+  }
+
+  .works-title::after {
+    width: 40px;
+    margin: 16px auto 0;
+    opacity: 0.3;
+  }
+
+  /* -----------------
+     ABOUT
+  ----------------- */
+>>>>>>> ff5ff3e (logo düzeltildi)
   .about {
     column-count: 1;
     max-width: 100%;
@@ -595,6 +657,12 @@ footer span {
     text-align: center;
   }
 
+<<<<<<< HEAD
+=======
+  /* -----------------
+     CONTACT & FOOTER
+  ----------------- */
+>>>>>>> ff5ff3e (logo düzeltildi)
   .contact {
     margin-top: 0 !important;
   }
@@ -604,7 +672,13 @@ footer span {
     padding: 15px 10px;
   }
 
+<<<<<<< HEAD
   
+=======
+  /* -----------------
+     PRELOADER
+  ----------------- */
+>>>>>>> ff5ff3e (logo düzeltildi)
   #preloader {
     position: fixed;
     inset: 0;
@@ -615,6 +689,7 @@ footer span {
     z-index: 5000;
   }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   header {
     opacity: 0;
@@ -635,6 +710,22 @@ footer span {
 
 }
 
+=======
+  .preloader-logo {
+    width: 64px;
+    animation: spin 0.9s linear infinite;
+  }
+
+  body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease;
+  }
+
+  /* -----------------
+     LOGO INTRO
+  ----------------- */
+>>>>>>> ff5ff3e (logo düzeltildi)
   .intro-logo {
     animation: introFadeOut 1.2s ease forwards;
     animation-delay: 1.2s;
@@ -642,6 +733,7 @@ footer span {
 
   .logo-container {
     position: static !important;
+<<<<<<< HEAD
     transition: opacity 0.5s ease;
   }
    
@@ -799,3 +891,10 @@ footer span {
 .delay-2 { transition-delay: .6s; }
 .delay-3 { transition-delay: .9s; }
 .delay-4 { transition-delay: 1.2s; }
+=======
+   transition: opacity 0.5s ease;
+  }
+
+ }
+}
+>>>>>>> ff5ff3e (logo düzeltildi)
