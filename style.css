@@ -284,7 +284,6 @@ header nav a:hover::after {
 .delay-3 { transition-delay: 0.6s; }
 .delay-4 { transition-delay: 0.8s; }
 
-<<<<<<< HEAD
 .fade-load,
 .fade-scroll {
   opacity: 0;
@@ -474,15 +473,6 @@ footer span {
 }
 
 
-@media (max-width: 900px) {
-
-
-@media (max-width: 900px) {
-
-  
-=======
-
-/* ========================= WORKS GRID – WEB (900px+) ========================= */
 @media (min-width: 900px) {
   .works {
     display: grid;
@@ -685,16 +675,15 @@ footer span {
   to { transform: scale(2.5); opacity: 0; }
 }
 
-/* ========================= KEYFRAMES ========================= */
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* ========================= RESPONSIVE ========================= */
 @media (max-width: 900px) {
-   /* HEADER */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
+
+
   header {
     padding: 20px 30px;
   }
@@ -736,15 +725,12 @@ footer span {
     object-fit: cover;
   }
 
-<<<<<<< HEAD
  .work:hover {
     transform: none !important;
     box-shadow: none !important;
   }
 
-=======
-  /* CONTACT & FOOTER */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
+
   .contact,
   footer {
     position: static;
@@ -752,11 +738,7 @@ footer span {
     margin: 0 auto;
   }
 
-<<<<<<< HEAD
- 
-=======
-  /* WORKSHOPS STACK - MOBİL */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
+
   .workshops-stack {
     flex-wrap: wrap;
     gap: 16px;
@@ -776,26 +758,8 @@ footer span {
   }
 }
 
-<<<<<<< HEAD
-}
-
-
 @media (max-width: 768px) {
 
-
-
-}
-
-
-@media (max-width: 768px) {
-
-
-
-=======
-/* ========================= MOBİL – 768px altı ========================= */
-@media (max-width: 768px) {
-  /* ----------------- HERO ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
   .hero-detail-btn {
     bottom: 64px;
     transform: translateX(-50%) scale(0.92);
@@ -805,21 +769,12 @@ footer span {
     opacity: 0.85;
   }
 
-<<<<<<< HEAD
 
-=======
-  /* ----------------- WORKS GRID (KRİTİK) ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
   .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 50px 14px 70px;
-<<<<<<< HEAD
-
-    margin-top: 20px;
-=======
-    margin-top: 20px; /* observer için nefes alanı */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
+    margin-top: 20px; 
   }
 
   .works .work {
@@ -844,10 +799,7 @@ footer span {
     border-radius: 8px;
   }
 
-<<<<<<< HEAD
-=======
-  /* ----------------- WORKS TITLE ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
+
   .works-title {
     position: relative;
     top: auto;
@@ -893,7 +845,6 @@ footer span {
     opacity: 0.3;
   }
 
-<<<<<<< HEAD
 
 
   .works-title.is-fading {
@@ -907,10 +858,7 @@ footer span {
   }
 
 
-  /* ABOUT */
-=======
-  /* ----------------- ABOUT ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
+
   .about {
     column-count: 1;
     max-width: 100%;
@@ -919,11 +867,7 @@ footer span {
     text-align: center;
   }
 
-<<<<<<< HEAD
 
-=======
-  /* ----------------- CONTACT & FOOTER ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
   .contact {
     margin-top: 0 !important;
   }
@@ -933,11 +877,7 @@ footer span {
     padding: 15px 10px;
   }
 
-<<<<<<< HEAD
 
-=======
-  /* ----------------- PRELOADER ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
   #preloader {
     position: fixed;
     inset: 0;
@@ -979,12 +919,6 @@ footer span {
     transition: opacity 0.35s ease;
   }
 
-<<<<<<< HEAD
-
-
-=======
-  /* ----------------- LOGO INTRO ----------------- */
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
   .intro-logo {
     animation: introFadeOut 1.2s ease forwards;
     animation-delay: 1.2s;
@@ -995,8 +929,6 @@ footer span {
 
     transition: opacity 0.5s ease;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
    
   .fade-scroll  {
     opacity: 1 !important;
@@ -1165,45 +1097,3 @@ footer span {
     transform: none !important;
   }
 }
-=======
-} 
->>>>>>> d42e183 (Tüm değişiklikler eklendi)
-=======
-   
-  .fade-scroll  {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-<<<<<<< HEAD
-} 
->>>>>>> 5851614 (logo düzeltildi)
-=======
-  }
-
-  @media (max-width: 768px) {
-  header {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  body.loaded header {
-    opacity: 1;
-    pointer-events: auto;
-  }
-<<<<<<< HEAD
-}
->>>>>>> f2a095a (logo düzeltildi)
-=======
-  @media (max-width: 768px) {
-  .works,
-  .works .work,
-  .works .work img {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
-}
-
-}
->>>>>>> 5f747fe (Tüm değişiklikler eklendi)
