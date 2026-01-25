@@ -171,3 +171,22 @@ document.addEventListener('pointerdown', (e) => {
     setTimeout(() => drop.remove(), 2600);
   }
 });
+// HERO LIGHTBOX
+const heroImg = document.querySelector('.hero-lightbox');
+
+if (heroImg) {
+  heroImg.style.cursor = 'zoom-in';
+
+  heroImg.addEventListener('click', () => {
+    const overlay = document.createElement('div');
+    overlay.className = 'image-overlay';
+
+    const bigImg = document.createElement('img');
+    bigImg.src = heroImg.src;
+
+    overlay.appendChild(bigImg);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', () => overlay.remove());
+  });
+}
