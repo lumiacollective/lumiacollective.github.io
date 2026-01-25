@@ -1,27 +1,32 @@
+/* =========================
+   PRELOADER
+========================= */
 window.addEventListener("load", () => {
-
-
-  window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   if (!preloader) return;
 
-  preloader.classList.add("hide");
-  setTimeout(() => preloader.remove(), 600);
-});
+  document.body.classList.add("loaded");
 
-  const preloader = document.getElementById("preloader");
-  if (!preloader) return;
-
-  preloader.classList.add("hide");
-  setTimeout(() => preloader.remove(), 600);
+  setTimeout(() => {
+    preloader.remove();
+  }, 600);
 });
 
 
+/* =========================
+   HOVER VAR MI?
+========================= */
 const hasHover = window.matchMedia('(hover: hover)').matches;
 
+
+/* =========================
+   DOM READY
+========================= */
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* LOGO INK – SADECE DESKTOP */
+  /* -----------------
+     LOGO INK – SADECE DESKTOP
+  ----------------- */
   if (hasHover) {
     const logo = document.querySelector('.logo-container');
     if (logo) {
@@ -39,16 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* WORKS HOVER – SADECE DESKTOP */
+  /* -----------------
+     WORKS 3D HOVER – SADECE DESKTOP
+  ----------------- */
   if (hasHover) {
     document.querySelectorAll('.works .work').forEach(work => {
       work.addEventListener('mousemove', e => {
         const rect = work.getBoundingClientRect();
         const dx = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
         const dy = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+
         work.style.transform =
           `translateY(-6px) scale(1.03) rotateX(${dy * 3}deg) rotateY(${dx * 3}deg)`;
       });
+
       work.addEventListener('mouseleave', () => {
         work.style.transform = '';
       });
@@ -57,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+/* =========================
+   CLICK WATER EFFECT
+========================= */
 document.addEventListener('click', e => {
 
   const colors = [
@@ -87,38 +100,48 @@ document.addEventListener('click', e => {
   `;
 
   document.body.appendChild(water);
-
   setTimeout(() => water.remove(), 2600);
 });
+
+
+/* =========================
+   WORKS TITLE SCROLL FADE
+========================= */
 window.addEventListener('scroll', () => {
   const title = document.querySelector('.works-title');
   const works = document.querySelector('.works');
-
   if (!title || !works) return;
 
   const scrollY = window.scrollY;
   const start = works.offsetTop - window.innerHeight * 0.5;
-  const end = works.offsetTop + works.offsetHeight * 0.3;
+  const end   = works.offsetTop + works.offsetHeight * 0.3;
 
   if (scrollY < start) {
-    title.style.transform = 'translateY(0px)';
+    title.style.transform = 'translateY(0)';
     title.style.opacity = 1;
     return;
   }
 
   const progress = Math.min(scrollY - start, end - start);
-
   title.style.transform = `translateY(${progress * 0.25}px)`;
   title.style.opacity = Math.max(1 - progress / 300, 0);
-});// LOAD FADE
+});
+
+
+/* =========================
+   LOAD FADE
+========================= */
 window.addEventListener("load", () => {
   document.querySelectorAll(".fade-load").forEach(el => {
     el.classList.add("show");
   });
 });
 
-// SCROLL FADE
-const observer = new IntersectionObserver((entries) => {
+
+/* =========================
+   SCROLL FADE (OBSERVER)
+========================= */
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
