@@ -774,3 +774,21 @@ footer span {
   left: 50% !important;
   transform: translate(-50%, -50%) rotate(0deg) !important;
 }
+/* ====== HARD RESET PRELOADER (SON NOKTA) ====== */
+#preloader {
+  position: fixed !important;
+  inset: 0 !important;
+  background: #fafafa !important;
+  z-index: 99999 !important;
+}
+
+#preloader img,
+#preloader .preloader-logo {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 72px !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+  animation: spin 1.2s linear infinite !important;
+}
