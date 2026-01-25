@@ -190,3 +190,12 @@ if (heroImg) {
     overlay.addEventListener('click', () => overlay.remove());
   });
 }
+const heroImages = Array.from(document.querySelectorAll('.hero-lightbox'));
+const heroBtn = document.querySelector('.hero-detail-btn');
+
+if (heroBtn && heroImages.length) {
+  heroBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openLightbox(heroImages.map(img => img.src), 0);
+  });
+}
