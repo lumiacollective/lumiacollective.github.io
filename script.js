@@ -1,7 +1,10 @@
 // PRELOADER
 window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+
   const preloader = document.getElementById("preloader");
   if (!preloader) return;
+
   preloader.classList.add("hide");
   setTimeout(() => preloader.remove(), 600);
 });
@@ -97,15 +100,23 @@ window.addEventListener("load", () => {
 });
 
 // SCROLL FADE
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
+const isMobile = window.innerWidth <= 768;
 
-document.querySelectorAll(".fade-scroll").forEach(el => {
-  observer.observe(el);
-});
+if (!isMobile) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".fade-scroll").forEach(el => {
+    observer.observe(el);
+  });
+} else {
+  document.querySelectorAll(".fade-scroll").forEach(el => {
+    el.classList.add("visible");
+  });
+}
