@@ -517,16 +517,12 @@ footer span {
     height: 200px;
     object-fit: cover;
   }
-<<<<<<< HEAD
 
-
-=======
  .work:hover {
     transform: none !important;
     box-shadow: none !important;
   }
-  /* CONTACT & FOOTER */
->>>>>>> 2a2777a (logo düzeltildi)
+
   .contact,
   footer {
     position: static;
