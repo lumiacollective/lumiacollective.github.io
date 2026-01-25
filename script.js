@@ -2,11 +2,6 @@
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 
-  const preloader = document.getElementById("preloader");
-  if (!preloader) return;
-
-  preloader.classList.add("hide");
-  setTimeout(() => preloader.remove(), 600);
 });
 
 // HOVER DESTEĞİ
@@ -147,23 +142,49 @@ if (!isMobile) {
   }
 });
 
-// LOGO INK EFFECT
-const logo = document.querySelector('.logo-container');
+// ================= WATER / EBRU CLICK EFFECT =================
+document.addEventListener('pointerdown', (e) => {
 
-if (logo) {
-  logo.style.cursor = 'pointer';
+  if (e.target.closest('a, button, nav')) return;
 
-  logo.addEventListener('click', (e) => {
-    for (let i = 0; i < 3; i++) {
-      const ink = document.createElement('div');
-      ink.className = 'ink';
+  const colors = [
+    'rgba(220,70,90,',
+    'rgba(60,120,200,',
+    'rgba(240,180,70,',
+    'rgba(80,170,130,',
+    'rgba(160,90,200,'
+  ];
 
-      ink.style.left = (e.clientX + Math.random() * 60 - 30) + 'px';
-      ink.style.top  = (e.clientY + Math.random() * 60 - 30) + 'px';
+  const drops = Math.floor(Math.random() * 3) + 2;
+
 
       document.body.appendChild(ink);
       setTimeout(() => ink.remove(), 1600);
     }
-  });
-}
->>>>>>> 932d68f (logo düzeltildi)
+  );
+
+  for (let i = 0; i < drops; i++) {
+    const c = colors[Math.floor(Math.random() * colors.length)];
+
+    const drop = document.createElement('div');
+    drop.className = 'watercolor';
+
+    const size = Math.random() * 100 + 80;
+    drop.style.width = size + 'px';
+    drop.style.height = size + 'px';
+
+    drop.style.left = (e.clientX - size / 2 + Math.random() * 80 - 40) + 'px';
+    drop.style.top  = (e.clientY - size / 2 + Math.random() * 80 - 40) + 'px';
+
+    drop.style.background = `
+      radial-gradient(
+        circle at ${30 + Math.random()*40}% ${30 + Math.random()*40}%,
+        ${c}0.55,
+        ${c}0.35 25%,
+        transparent 70%
+      )
+    `;
+
+    document.body.appendChild(drop);
+    setTimeout(() => drop.remove(), 2600);
+  }
