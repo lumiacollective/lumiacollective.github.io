@@ -110,4 +110,23 @@ window.addEventListener('scroll', () => {
 
   title.style.transform = `translateY(${progress * 0.25}px)`;
   title.style.opacity = Math.max(1 - progress / 300, 0);
+});// LOAD FADE
+window.addEventListener("load", () => {
+  document.querySelectorAll(".fade-load").forEach(el => {
+    el.classList.add("show");
+  });
+});
+
+// SCROLL FADE
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".fade-scroll").forEach(el => {
+  observer.observe(el);
 });
