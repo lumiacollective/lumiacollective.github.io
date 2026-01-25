@@ -16,7 +16,10 @@ window.addEventListener("load", () => {
 /* =========================
    HOVER VAR MI?
 ========================= */
-const hasHover = window.matchMedia('(hover: hover)').matches;
+const hasHover =
+  window.matchMedia('(hover: hover)').matches &&
+  window.matchMedia('(pointer: fine)').matches;
+
 
 
 /* =========================
