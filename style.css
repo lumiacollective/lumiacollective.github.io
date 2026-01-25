@@ -739,7 +739,6 @@ footer span {
     opacity: 0;
   }
 }
-<<<<<<< HEAD
 #preloader {
   position: fixed !important;
   top: 0 !important;
@@ -773,7 +772,6 @@ footer span {
   animation: spin 1.2s linear infinite !important;
 }
 
-=======
 .fade-load {
   opacity: 0;
   transform: translateY(20px);
@@ -801,4 +799,3 @@ footer span {
 .delay-2 { transition-delay: .6s; }
 .delay-3 { transition-delay: .9s; }
 .delay-4 { transition-delay: 1.2s; }
->>>>>>> 2f7da29 (logo düzeltildi)
