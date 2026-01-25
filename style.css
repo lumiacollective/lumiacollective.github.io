@@ -465,42 +465,7 @@ footer span {
   box-shadow: 0 40px 80px rgba(0,0,0,.25);
 }
 
-/* ========================= WATER / INK EFFECT ========================= */
-.watercolor {
-  position: fixed;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.15) 20%, transparent 65%);
-  filter: blur(6px);
-  mix-blend-mode: multiply;
-  animation: watercolorSpread 2.4s ease-out forwards;
-}
-
-@keyframes watercolorSpread {
-  from { transform: scale(0.2); opacity: 0.85; }
-  to { transform: scale(2.8); opacity: 0; }
-}
-
-.ink {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.35), rgba(0,0,0,0.15), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: inkSpread 1.6s ease-out forwards;
-  mix-blend-mode: multiply;
-  z-index: 9999;
-}
-
-@keyframes inkSpread {
-  from { transform: scale(0.2); opacity: 0.9; }
-  to { transform: scale(2.5); opacity: 0; }
-}
-
+                
 /* ========================= KEYFRAMES ========================= */
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -720,3 +685,59 @@ footer span {
  
 }
 
+/* ========================= WATER / EBRU EFFECT ========================= */
+.watercolor {
+  position: fixed;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0.15) 20%,
+    transparent 65%);
+
+  filter: blur(6px);
+  mix-blend-mode: multiply;
+
+  animation: watercolorSpread 2.4s ease-out forwards;
+}
+
+@keyframes watercolorSpread {
+  from {
+    transform: scale(0.2);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.ink {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.15),
+    transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: inkSpread 1.6s ease-out forwards;
+  mix-blend-mode: multiply;
+  z-index: 9999;
+}
+
+@keyframes inkSpread {
+  from {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
