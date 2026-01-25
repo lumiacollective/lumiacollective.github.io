@@ -1003,7 +1003,6 @@ body.loaded header {
 }
 
 
-@media (max-width: 768px) {
 
 
 .ink {
@@ -1049,6 +1048,8 @@ body.loaded header {
   left: 50% !important;
   transform: translate(-50%, -50%) rotate(0deg) !important;
 }
+
+
 
 
 #preloader {
@@ -1109,5 +1110,4 @@ body.loaded header {
   .work img {
     transform: none !important;
   }
-}
 }
