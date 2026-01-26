@@ -74,6 +74,7 @@ body.loaded .preloader-logo {
   margin: 0 auto;
 }
 
+
 header {
   position: fixed;
   top: 0;
@@ -896,32 +897,31 @@ footer span {
     pointer-events: none;
 
   }
-
+}
   body.loaded header {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.4s ease;
   }
-  @media (max-width: 768px) {
+
+
+@media (max-width: 768px) {
   header .logo,
   header .logo-container {
     display: none !important;
   }
 }
 
+.preloader-logo {
+  width: 64px;
+  animation: spin 0.9s linear infinite;
 }
 
-  .preloader-logo {
-    width: 64px;
-    animation: spin 0.9s linear infinite;
-
-  }
-
-  body.loaded header {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.4s ease;
-  }
+body.loaded header {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+}
 
 
   .intro-logo {
