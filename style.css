@@ -739,6 +739,7 @@ footer span {
     opacity: 0;
   }
 }
+<<<<<<< HEAD
 #preloader {
   position: fixed !important;
   top: 0 !important;
@@ -772,3 +773,32 @@ footer span {
   animation: spin 1.2s linear infinite !important;
 }
 
+=======
+.fade-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-load.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.fade-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* gecikmeler */
+.delay-1 { transition-delay: .3s; }
+.delay-2 { transition-delay: .6s; }
+.delay-3 { transition-delay: .9s; }
+.delay-4 { transition-delay: 1.2s; }
+>>>>>>> 2f7da29 (logo düzeltildi)
