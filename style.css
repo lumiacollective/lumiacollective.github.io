@@ -256,6 +256,31 @@ header nav a:hover::after {
   filter: blur(1px);
   transform: scale(0.92);
 }
+/* =========================
+   FADE SYSTEM (GLOBAL)
+========================= */
+.fade-load,
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-load.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* gecikmeler */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
 
 .fade-load,
 .fade-scroll {
@@ -492,8 +517,16 @@ footer span {
     height: 200px;
     object-fit: cover;
   }
+<<<<<<< HEAD
 
 
+=======
+ .work:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  /* CONTACT & FOOTER */
+>>>>>>> 2a2777a (logo düzeltildi)
   .contact,
   footer {
     position: static;
