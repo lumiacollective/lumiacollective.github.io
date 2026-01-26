@@ -366,3 +366,33 @@ body.loaded #preloader {
     opacity: 0;
   }
 }
+  @media (max-width: 768px) {
+  .works {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 50px 14px 70px;
+    margin-top: 20px;
+  }
+
+  .works .work {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .works .work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .works,
+  .works .work,
+  .works .work img {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  }
