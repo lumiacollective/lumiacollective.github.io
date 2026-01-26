@@ -367,6 +367,16 @@ body.loaded #preloader {
   }
 }
   @media (max-width: 768px) {
+
+      .hero-detail-btn {
+    bottom: 64px;
+    transform: translateX(-50%) scale(0.92);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    padding: 12px 22px;
+    opacity: 0.85;
+  }
+  
   .works {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
