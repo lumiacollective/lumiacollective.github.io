@@ -1170,9 +1170,26 @@ footer span {
 >>>>>>> d42e183 (Tüm değişiklikler eklendi)
 =======
    
-  .fade-scroll {
+  .fade-scroll  {
     opacity: 1 !important;
     transform: none !important;
   }
+<<<<<<< HEAD
 } 
 >>>>>>> 5851614 (logo düzeltildi)
+=======
+  }
+
+  @media (max-width: 768px) {
+  header {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  body.loaded header {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+>>>>>>> f2a095a (logo düzeltildi)
