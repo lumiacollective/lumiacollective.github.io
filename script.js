@@ -76,6 +76,7 @@ window.addEventListener("load", () => {
 
 // SCROLL FADE
 const isMobile = window.innerWidth <= 768;
+<<<<<<< HEAD
 
 document.querySelectorAll(".fade-scroll").forEach(el => {
   observer.observe(el);
@@ -89,6 +90,8 @@ document.querySelector('.hero-detail-btn')?.addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('.hero-lightbox')?.click();
 });
+=======
+>>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 
 if (!isMobile) {
   const observer = new IntersectionObserver((entries) => {
@@ -111,6 +114,10 @@ if (!isMobile) {
 
   document.addEventListener('click', (e) => {
 
+<<<<<<< HEAD
+=======
+  // Header / link tıklamalarında aşırı boya istemiyorsan:
+>>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
   if (e.target.closest('a, button, nav')) return;
 
   const colors = [
@@ -157,12 +164,15 @@ document.addEventListener('pointerdown', (e) => {
 
   const drops = Math.floor(Math.random() * 3) + 2;
 
+<<<<<<< HEAD
 
       document.body.appendChild(ink);
       setTimeout(() => ink.remove(), 1600);
     }
   );
 
+=======
+>>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
   for (let i = 0; i < drops; i++) {
     const c = colors[Math.floor(Math.random() * colors.length)];
 
@@ -188,7 +198,12 @@ document.addEventListener('pointerdown', (e) => {
     document.body.appendChild(drop);
     setTimeout(() => drop.remove(), 2600);
   }
+<<<<<<< HEAD
 
+=======
+});
+// HERO LIGHTBOX
+>>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 const heroImg = document.querySelector('.hero-lightbox');
 
 if (heroImg) {
@@ -207,7 +222,10 @@ if (heroImg) {
     overlay.addEventListener('click', () => overlay.remove());
   });
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 const heroImages = Array.from(document.querySelectorAll('.hero-lightbox'));
 const heroBtn = document.querySelector('.hero-detail-btn');
 
@@ -217,4 +235,7 @@ if (heroBtn && heroImages.length) {
     openLightbox(heroImages.map(img => img.src), 0);
   });
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
