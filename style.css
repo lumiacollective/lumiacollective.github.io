@@ -639,7 +639,7 @@ footer span {
   box-shadow: 0 40px 80px rgba(0,0,0,.25);
 }
 
-/* ========================= WATER / INK EFFECT ========================= */
+
 .watercolor {
   position: fixed;
   width: 140px;
@@ -674,6 +674,7 @@ footer span {
   from { transform: scale(0.2); opacity: 0.9; }
   to { transform: scale(2.5); opacity: 0; }
 }
+
 
 
 @keyframes spin {
@@ -967,6 +968,7 @@ footer span {
  
 }
 
+
 .watercolor {
   position: fixed;
   width: 140px;
@@ -997,7 +999,9 @@ footer span {
   }
 }
 
+
 @media (max-width: 768px) {
+
 
 .ink {
   position: fixed;
@@ -1013,7 +1017,8 @@ footer span {
   mix-blend-mode: multiply;
   z-index: 9999;
 }
-}
+
+
 @keyframes inkSpread {
   from {
     transform: scale(0.2);
@@ -1023,6 +1028,7 @@ footer span {
     transform: scale(2.5);
     opacity: 0;
   }
+
 }
 #preloader {
   position: fixed !important;
@@ -1097,4 +1103,5 @@ footer span {
   .work img {
     transform: none !important;
   }
+}
 }

@@ -49,27 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// WATER COLOR CLICK EFFECT
-document.addEventListener('click', e => {
-  const colors = [
-    'rgba(120,180,255,',
-    'rgba(180,120,255,',
-    'rgba(255,180,120,',
-    'rgba(120,200,160,',
-    'rgba(200,140,160,'
-  ];
-  const c1 = colors[Math.floor(Math.random() * colors.length)];
-  const c2 = colors[Math.floor(Math.random() * colors.length)];
-  const c3 = colors[Math.floor(Math.random() * colors.length)];
 
-  const water = document.createElement('div');
-  water.className = 'watercolor';
-  water.style.left = (e.clientX - 80) + 'px';
-  water.style.top = (e.clientY - 80) + 'px';
-  water.style.background = `radial-gradient(circle at 30% 30%, ${c1}0.55, ${c2}0.35, ${c3}0.25, transparent 70%)`;
-  document.body.appendChild(water);
-  setTimeout(() => water.remove(), 2600);
-});
 
 // WORKS TITLE SCROLL EFFECT
 window.addEventListener('scroll', () => {
@@ -134,3 +114,59 @@ if (!isMobile) {
   });
 }
 
+<<<<<<< HEAD
+=======
+  document.addEventListener('click', (e) => {
+
+  // Header / link tıklamalarında aşırı boya istemiyorsan:
+  if (e.target.closest('a, button, nav')) return;
+
+  const colors = [
+    'rgba(220, 70, 90, 0.35)',   // kırmızımsı
+    'rgba(60, 120, 200, 0.35)', // mavi
+    'rgba(240, 180, 70, 0.35)', // sarı
+    'rgba(80, 170, 130, 0.35)', // yeşil
+    'rgba(160, 90, 200, 0.35)'  // mor
+  ];
+
+  const drops = Math.floor(Math.random() * 3) + 2; // 2–4 damla
+
+  for (let i = 0; i < drops; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'watercolor';
+
+    const size = Math.random() * 100 + 80;
+    drop.style.width = size + 'px';
+    drop.style.height = size + 'px';
+
+    drop.style.left = (e.clientX + Math.random() * 80 - 40) + 'px';
+    drop.style.top  = (e.clientY + Math.random() * 80 - 40) + 'px';
+
+    drop.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    document.body.appendChild(drop);
+    setTimeout(() => drop.remove(), 2400);
+  }
+});
+
+// LOGO INK EFFECT
+const logo = document.querySelector('.logo-container');
+
+if (logo) {
+  logo.style.cursor = 'pointer';
+
+  logo.addEventListener('click', (e) => {
+    for (let i = 0; i < 3; i++) {
+      const ink = document.createElement('div');
+      ink.className = 'ink';
+
+      ink.style.left = (e.clientX + Math.random() * 60 - 30) + 'px';
+      ink.style.top  = (e.clientY + Math.random() * 60 - 30) + 'px';
+
+      document.body.appendChild(ink);
+      setTimeout(() => ink.remove(), 1600);
+    }
+  });
+}
+>>>>>>> 932d68f (logo düzeltildi)
