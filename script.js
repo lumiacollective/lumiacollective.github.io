@@ -188,10 +188,7 @@ document.addEventListener('pointerdown', (e) => {
     document.body.appendChild(drop);
     setTimeout(() => drop.remove(), 2600);
   }
-<<<<<<< HEAD
-=======
-});
-// HERO LIGHTBOX
+
 const heroImg = document.querySelector('.hero-lightbox');
 
 if (heroImg) {
@@ -210,9 +207,7 @@ if (heroImg) {
     overlay.addEventListener('click', () => overlay.remove());
   });
 }
-<<<<<<< HEAD
->>>>>>> 0ed10af (hero düzeltildi)
-=======
+
 const heroImages = Array.from(document.querySelectorAll('.hero-lightbox'));
 const heroBtn = document.querySelector('.hero-detail-btn');
 
@@ -222,4 +217,4 @@ if (heroBtn && heroImages.length) {
     openLightbox(heroImages.map(img => img.src), 0);
   });
 }
->>>>>>> 01332f4 (düzeltildi)
+
