@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-
-=======
-/* =========================
-   RESET
-========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,16 +8,11 @@ body {
   background: #ffffff;
   color: #111;
   font-family: 'Cormorant Garamond', serif;
-  padding-top: 120px; /* HEADER yüksekliği kadar */
+  padding-top: 120px; 
 }
-<<<<<<< HEAD
- 
-=======
 
-/* =========================
-   LOGO
-========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
+
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -33,32 +21,12 @@ body {
   opacity: 1;
   transition: transform 0.35s ease, opacity 0.35s ease-out;
 }
-
-.logo-container:hover {
+ .logo-container:hover {
   transform: translateY(-1px);
   opacity: 0.85;
 }
 
-.logo-text {
-  font-size: 20px;
-  font-weight: 500;
-  color: #111;
-  letter-spacing: 1px;
-}
 
-.logo {
-  width: 40px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
-  animation: none;
-}
-<<<<<<< HEAD
- 
-=======
-
-/* =========================
-   PRELOADER
-========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 #preloader {
   position: fixed;
   inset: 0;
@@ -67,40 +35,31 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 5000;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-body.loaded #preloader {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .preloader-logo {
   width: 80px;
-  animation: spin 3s linear infinite;
+  animation: spin 5s linear infinite; 
 }
 
-body.loaded .preloader-logo {
-  animation: none;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* PRELOADER LOGOSUNU HEADER'DAN TAMAMEN KOPAR */
-#preloader .preloader-logo {
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  transform: none !important;
-  margin: 0 auto;
+
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
 }
 
-<<<<<<< HEAD
+.logo {
+  width: 40px;
+}
+.logo {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+}
 
-=======
-/* =========================
-   HEADER
-========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 header {
   position: fixed;
   top: 0;
@@ -109,11 +68,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fafafa;
+  background: #fafafa; 
   border-bottom: 1px solid rgba(0,0,0,0.06);
+
   backdrop-filter: blur(8px);
   z-index: 1000;
 }
+
 
 header nav a {
   position: relative;
@@ -128,7 +89,7 @@ header nav a::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -4px; 
   width: 0;
   height: 2px;
   background: #111;
@@ -138,10 +99,30 @@ header nav a::after {
 header nav a:hover::after {
   width: 100%;
 }
- 
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container .logo {
+  width: 40px;
+  animation: none; 
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+
 .main-nav {
   display: flex;
-  gap: 32px;
+  gap: 32px; 
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
@@ -156,18 +137,23 @@ header nav a:hover::after {
 .main-nav a:hover {
   color: #555;
 }
-<<<<<<< HEAD
- 
-=======
 
-/* =========================
-   HERO
-========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
+
+@media(max-width:900px) {
+  header {
+    padding: 20px 30px;
+  }
+  .main-nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+
 .hero {
   width: 100%;
   background: #ffffff;
 }
+
 
 .hero-text-area {
   text-align: center;
@@ -187,855 +173,144 @@ header nav a:hover::after {
   color: #666;
 }
 
+
 .hero-image-area {
-  position: relative;
+  position: relative; 
   height: 50vh;
   overflow: hidden;
   margin-top: -40px;
 }
 
+
 .hero-image-area img {
   width: 100%;
   height: 70%;
-  object-fit: cover;
+  object-fit: cover; 
 }
-<<<<<<< HEAD
- 
-.hero-detail-btn {
-   position: absolute;
-    right: 60px;
-     bottom: 54px;
-      padding: 14px 28px;
-       font-size: 11px;
-       letter-spacing: 3px;
-        text-transform: uppercase;
-         color: #222;
-          text-decoration: none;
-           background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(10px);
-             border: 1px solid rgba(0,0,0,0.12);
-             border-radius: 40px;
-              opacity: 0.9;
-               transition: transform 0.3s ease,
-=======
 
 
 .hero-detail-btn {
   position: absolute;
-  right: 60px;
+  left: 50%;
   bottom: 54px;
+  transform: translateX(-50%);
 
-  padding: 14px 28px;
+  padding: 14px 18px;
   font-size: 11px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 
-  color: #222;
+  color: #fff;
   text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.6);
 
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 40px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
 
-  opacity: 0.9;
-
-  transition: transform 0.3s ease,
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-              box-shadow 0.3s ease,
-              letter-spacing 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .hero-detail-btn:hover {
-  transform: translateY(-3px);
-  letter-spacing: 4px;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
-}
-<<<<<<< HEAD
- 
-=======
-
-/* =========================
-   WORKSHOPS
-========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-.workshops {
-  padding: 120px 0 180px;
-  text-align: center;
-}
-
-.workshops h2 {
-  font-size: 26px;
-  font-weight: 300;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #222;
-  margin-bottom: 90px;
-  position: relative;
-}
-
-.workshops h2::after {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: #222;
-  opacity: 0.3;
-  display: block;
-  margin: 24px auto 0;
-}
-
-<<<<<<< HEAD
-
-=======
-/* Workshops stack - web */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-.workshops-stack {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 60px;
-  flex-wrap: nowrap;
-  overflow-x: visible;
- }
-
-.workshops-stack .work {
-   flex: 0 0 240px;
-  margin-left: -70px;
-  opacity: 0.5;
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
- }
-
-.workshops-stack .work:first-child {
-   margin-left: 0;
-}
-
-.workshops-stack .work img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-}
- 
-.workshops-stack .work:hover {
-   transform: scale(1.08);
-  opacity: 1;
-  z-index: 10;
-}
- 
-.workshops-stack:hover .work:not(:hover) {
-   opacity: 0.25;
-  filter: blur(1px);
-  transform: scale(0.92);
-}
-/* =========================
-   FADE SYSTEM (GLOBAL)
-========================= */
-.fade-load,
-.fade-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.fade-load.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* gecikmeler */
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-.delay-4 { transition-delay: 0.8s; }
-
-<<<<<<< HEAD
-.fade-load,
-.fade-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.fade-load.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-.delay-4 { transition-delay: 0.8s; }
-
-=======
-
-/* ========================= WORKS GRID – WEB (900px+) ========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-@media (min-width: 900px) {
-  .works {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 110px 60px 160px;
-  }
-
-  .works-title {
-    position: sticky;
-    top: 120px;
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: #222;
-    opacity: 0.6;
-    z-index: 50;
-    pointer-events: none;
-    background: none; /* ✔️ ayrı */
-    backdrop-filter: blur(6px); /* ✔️ ayrı */
-    transition: opacity 0.3s ease-out;
-  }
-
-  .works-title.is-fading {
-    opacity: 0;
-  }
-
-  .works-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 1px;
-    background: rgba(0,0,0,0.25);
-    margin: 24px auto 0;
-  }
-}
-
-/* ORTAK WORK KUTUSU */
-.work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-<<<<<<< HEAD
-.work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform: translateX(-50%) translateY(-6px); /* 👈 yukarı süzülür */
+  background: rgba(0,0,0,0.55);
 }
 
 
-.work.square {
-  aspect-ratio: 1 / 1;
+.close-modal {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 50%;
+  user-select: none;
+  background: rgba(0,0,0,0.3);
+  transform: translateY(-50%);
+}
+.prev { left: -50px; } 
+.next { right: -50px; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.6); }
+
+.show-detail {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-decoration: none;
+}
+.show-detail:hover {
+  background: rgba(0,0,0,0.9);
 }
 
 
-.work.horizontal {
-  aspect-ratio: 2 / 1;
-  grid-column: span 2;
-}
+.works { padding: 150px 60px 160px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+.works-title { position: sticky; top: 140px; grid-column: 1/-1; text-align: center; font-size: 26px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: #222; opacity: .75; z-index: 20; pointer-events: none; background: rgba(250,250,250,.6); padding: 12px 28px; backdrop-filter: blur(6px); border-radius: 40px; transition: opacity .4s, transform .4s; }
+.works-title.is-fading { opacity: 0; transform: translateY(-10px); }
+.works-title::after { content:""; display: block; width: 60px; height: 1px;   background: rgba(0,0,0,0.25);   margin: 24px auto 0; /* çizgi başlığın altında */}
+.works .work { margin: 0; transition: transform 0.3s ease; will-change: transform, box-shadow; }
+.works .work img { width: 100%; border-radius: 10px; transition: transform .4s ease; }
+.image-depth { position: relative; background: #f1f1f1; border-radius: 12px; }
+.image-depth img { position: relative; z-index: 2; border-radius: 12px; }
+.image-depth:hover { transform: translateY(-3px); }
+.image-depth::before { content: ""; position: absolute; inset: 8px -8px -8px 8px; background: #ebebeb; border-radius: 12px; z-index: 1; }
+.image-depth.left-shadow::before { inset: 8px 8px -8px -8px; }
 
-.work img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.work.horizontal { grid-column: span 2; }
+.work img:hover { transform: scale(1.03); opacity: .9; }
+.work.square img { aspect-ratio: 1/1; object-fit: cover; }
+.work.horizontal img { aspect-ratio: 3/1; object-fit: cover; }
 
-
-.work:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
-  z-index: 5;
-}
-
-
-.work-meta {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.work:hover .work-meta {
-  opacity: 1;
-  transform: translateY(0);
-}
+.work-meta { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: #fff; font-size: 13px; letter-spacing: 1px; opacity: 0; transform: translateY(15px); transition: opacity .5s ease, transform .5s ease; background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0)); border-radius: 12px; pointer-events: none; }
+.work:hover .work-meta { opacity: 1; transform: translateY(0); }
+.work-meta span:first-child { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; }
+.work-meta span:last-child { font-size: 11px; opacity: .85; }
 
 
-.about { position:relative; overflow:hidden; max-width:650px; margin:100px auto 120px; padding:80px 20px; text-align:center; font-size:20px; line-height:1.45; opacity:.85; }
+.workshops { padding: 80px 0 160px; text-align: center; }
+.workshops h2 { font-size: 26px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: #222; margin-bottom: 70px; position: relative; }
+.workshops h2::after { content:""; width: 40px; height:1px; background:#222; opacity:0.3; display:block; margin:20px auto 0; }
+.workshops-stack { display: flex; justify-content: center; padding:0 60px; }
+.workshops-stack .work { flex: 0 0 240px; margin-left: -70px; opacity:0.5; transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease; }
+.workshops-stack .work:first-child { margin-left:0; }
+.workshops-stack .work img { width:100%; height:320px; object-fit:cover; border-radius:12px; box-shadow:0 30px 60px rgba(0,0,0,0.15); }
+.workshops-stack .work:hover { transform: scale(1.15); opacity:1; z-index:10; }
+.workshops-stack:hover .work:not(:hover) { opacity:0.25; filter:blur(1px); transform:scale(0.92); }
+
+
+.about { position:relative; overflow:hidden; max-width:640px; margin:100px auto 120px; padding:80px 20px; text-align:center; font-size:18px; line-height:1.45; opacity:.85; }
 .about .cursor-trace { position:absolute; width:120px; height:120px; border-radius:50%; background:radial-gradient(circle, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.04) 55%, transparent 70%); pointer-events:none; transform:translate(-50%,-50%); opacity:0; transition:opacity .4s ease; mix-blend-mode:multiply; z-index:10; filter:blur(8px); }
 
 
-=======
-/* KARE */
-.work.square {
-  aspect-ratio: 1 / 1;
-}
+.contact { padding:10px 20px 120px; text-align:center; font-size:16px; letter-spacing:1px; opacity:0.8; }
+.contact a { font-size:16px; text-decoration:none; color:#111; transition:opacity 0.3s ease; }
+.contact a:hover { opacity:1; }
 
-/* HORIZONTAL – 2 tane yan yana */
-.work.horizontal {
-  aspect-ratio: 2 / 1;
-  grid-column: span 2;
-}
+footer { position:relative; width:100%; text-align:center; padding:20px 0; font-size:14px; color:#555; }
 
-.work img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
-/* HOVER */
-.work:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
+@media(max-width:900px){ header{padding:20px 30px} .hero-text h1{font-size:38px} .workshops-stack{padding:0 20px} }
 
-/* Meta bilgiler */
-.work-meta {
+
+.image-overlay { position:fixed; inset:0; background:rgba(250,250,250,.96); display:flex; align-items:center; justify-content:center; z-index:2000; cursor:zoom-out; }
+.image-overlay img { max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 40px 80px rgba(0,0,0,.25); }
+
+body.loaded #preloader {
   opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  visibility: hidden;
+  pointer-events: none; 
 }
-
-.work:hover .work-meta {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========================= ABOUT ========================= */
-.about {
-  position: relative;
-  overflow: hidden;
-  max-width: 650px;
-  margin: 100px auto 120px;
-  padding: 80px 20px;
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.45;
-  opacity: .85;
-}
-
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-.about .cursor-trace {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.04) 55%, transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%,-50%);
-  opacity: 0;
-  transition: opacity .4s ease;
-  mix-blend-mode: multiply;
-  z-index: 10;
-  filter: blur(8px);
-}
-
-<<<<<<< HEAD
-
-=======
-/* ========================= CONTACT & FOOTER ========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-.contact {
-  padding: 20px 10px 140px;
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: 1px;
-  opacity: 0.8;
-}
-
-.contact a {
-  font-size: 16px;
-<<<<<<< HEAD
-  font-size: 16 px;
-=======
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-  text-decoration: none;
-  color: #111;
-  transition: opacity 0.3s ease;
-}
-
-.contact a:hover {
-  opacity: 1;
-}
-
-footer {
-  text-align: center;
-  font-size: 14px;
-  padding: 20px 10px;
-  line-height: 1.5;
-}
-
-footer span {
-  display: block;
-  margin: 5px 0;
-}
-
-<<<<<<< HEAD
-
-.image-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(250,250,250,.96);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  cursor: zoom-out;
-}
-
-.image-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 40px 80px rgba(0,0,0,.25);
-}
-
-                
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-@media (min-width: 900px) {
-  .works {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 110px 60px 160px;
-  }
-
-  .works-title {
-    position: sticky;
-    top: 120px;
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: #222;
-    opacity: 0.6;
-    z-index: 50;
-    pointer-events: none;
-    background: none; /* ✔️ ayrı */
-    backdrop-filter: blur(6px); /* ✔️ ayrı */
-    transition: opacity 0.3s ease-out;
-  }
-
-  .works-title.is-fading {
-    opacity: 0;
-  }
-
-  .works-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 1px;
-    background: rgba(0,0,0,0.25);
-    margin: 24px auto 0;
-  }
-}
-
-/* ORTAK WORK KUTUSU */
-.work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* KARE */
-.work.square {
-  aspect-ratio: 1 / 1;
-}
-
-/* HORIZONTAL – 2 tane yan yana */
-.work.horizontal {
-  aspect-ratio: 2 / 1;
-  grid-column: span 2;
-}
-
-.work img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* HOVER */
-.work:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-/* Meta bilgiler */
-.work-meta {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.work:hover .work-meta {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========================= ABOUT ========================= */
-.about {
-  position: relative;
-  overflow: hidden;
-  max-width: 650px;
-  margin: 100px auto 120px;
-  padding: 80px 20px;
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.45;
-  opacity: .85;
-}
-
-.about .cursor-trace {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.04) 55%, transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%,-50%);
-  opacity: 0;
-  transition: opacity .4s ease;
-  mix-blend-mode: multiply;
-  z-index: 10;
-  filter: blur(8px);
-}
-
-/* ========================= CONTACT & FOOTER ========================= */
-.contact {
-  padding: 20px 10px 140px;
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: 1px;
-  opacity: 0.8;
-}
-
-.contact a {
-  font-size: 16px;
-  text-decoration: none;
-  color: #111;
-  transition: opacity 0.3s ease;
-}
-
-.contact a:hover {
-  opacity: 1;
-}
-
-footer {
-  text-align: center;
-  font-size: 14px;
-  padding: 20px 10px;
-  line-height: 1.5;
-}
-
-footer span {
-  display: block;
-  margin: 5px 0;
-}
-
-/* ========================= IMAGE ZOOM ========================= */
-.image-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(250,250,250,.96);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  cursor: zoom-out;
-}
-
-.image-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 40px 80px rgba(0,0,0,.25);
-}
-
-
-=======
-/* ========================= IMAGE ZOOM ========================= */
-.image-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(250,250,250,.96);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  cursor: zoom-out;
-}
-
-.image-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 40px 80px rgba(0,0,0,.25);
-}
-
-                
-/* ========================= KEYFRAMES ========================= */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* ========================= RESPONSIVE ========================= */
-@media (max-width: 900px) {
-   /* HEADER */
-  header {
-    padding: 20px 30px;
-  }
-
-  .main-nav {
-    gap: 20px;
-    font-size: 14px;
-  }
-
-  /* HERO */
-  .hero-text-area h1 {
-    font-size: 38px;
-  }
-
-  .hero-image-area {
-    height: 50vh;
-  }
-
-  .hero-image-area img {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* WORKS GRID */
-  .works {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 80px 16px 100px;
-  }
-
-  .work.square,
-  .work.horizontal {
-    aspect-ratio: 1 / 1;
-  }
-
-  .work.horizontal img {
-    height: 200px;
-    object-fit: cover;
-  }
-
-  /* CONTACT & FOOTER */
-  .contact,
-  footer {
-    position: static;
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* WORKSHOPS STACK - MOBİL */
-  .workshops-stack {
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    padding: 0 20px;
-  }
-
-  .workshops-stack .work {
-    flex: 0 0 45%;
-    margin-left: 0;
-    opacity: 1;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-  }
-
-  .workshops-stack .work:hover {
-    transform: translateY(-6px) scale(1.03);
-  }
-}
-
-/* ========================= MOBİL – 768px altı ========================= */
-@media (max-width: 768px) {
-
-  /* ----------------- HERO ----------------- */
-  .hero-detail-btn {
-    bottom: 64px;
-    transform: translateX(-50%) scale(0.92);
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    padding: 12px 22px;
-    opacity: 0.85;
-  }
-
-  /* ----------------- WORKS GRID (KRİTİK) ----------------- */
-  .works {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 50px 14px 70px;
-    margin-top: 20px;
-  }
-
-  .works .work {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .works .work img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  /* 🔥 MOBİLDE GÖRSEL KİLİDİNİ TAM AÇ */
-  .works,
-  .works .work,
-  .works .work img {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
-
-}
-
-  /* ----------------- WORKS TITLE ----------------- */
-  .works-title {
-    position: relative;
-    top: auto;
-    margin-bottom: 24px;
-    font-size: 26px;
-    letter-spacing: 4px;
-    opacity: 0.45;
-    transform: none;
-    transition: opacity 0.2s ease-out;
-    margin-top: 124px;
-  }
-
-  .works-title.is-fading {
-    opacity: 0;
-  }
-
-  .works-title::after {
-    width: 40px;
-    margin: 16px auto 0;
-    opacity: 0.3;
-  }
-
-  /* ----------------- ABOUT ----------------- */
-  .about {
-    column-count: 1;
-    max-width: 100%;
-    margin: 120px auto 80px;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  /* ----------------- CONTACT & FOOTER ----------------- */
-  .contact {
-    margin-top: 0 !important;
-  }
-
-  footer {
-    font-size: 13px;
-    padding: 15px 10px;
-  }
-
-  /* ----------------- PRELOADER ----------------- */
-  #preloader {
-    position: fixed;
-    inset: 0;
-    background: #fafafa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5000;
-  }
-
-@media (max-width: 768px) {
-  header {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  body.loaded header {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.4s ease;
-  }
-  @media (max-width: 768px) {
-  header .logo,
-  header .logo-container {
-    display: none !important;
-  }
-}
-
-}
-
-  /* ----------------- LOGO INTRO ----------------- */
-  .intro-logo {
-    animation: introFadeOut 1.2s ease forwards;
-    animation-delay: 1.2s;
-  }
-
-  .logo-container {
-    position: static !important;
-    transition: opacity 0.5s ease;
-  }
-   
-  .fade-scroll  {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
-
-  @media (max-width: 768px) {
-  header {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  body.loaded header {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
- 
-}
-
-/* ========================= WATER / EBRU EFFECT ========================= */
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 .watercolor {
   position: fixed;
   width: 140px;
@@ -1090,467 +365,4 @@ footer span {
     transform: scale(2.5);
     opacity: 0;
   }
-}/* FORCE PRELOADER CENTER – NOKTA */
-#preloader {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-}
-
-<<<<<<< HEAD
-
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@media (max-width: 900px) {
-
-
-  header {
-    padding: 20px 30px;
-  }
-
-  .main-nav {
-    gap: 20px;
-    font-size: 14px;
-  }
-
-  /* HERO */
-  .hero-text-area h1 {
-    font-size: 38px;
-  }
-
-  .hero-image-area {
-    height: 50vh;
-  }
-
-  .hero-image-area img {
-    height: 100%;
-    object-fit: cover;
-  }
-
-
-  .works {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 80px 16px 100px;
-  }
-
-  .work.square,
-  .work.horizontal {
-    aspect-ratio: 1 / 1;
-  }
-
-  .work.horizontal img {
-    height: 200px;
-    object-fit: cover;
-  }
-
- .work:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-
-  .contact,
-  footer {
-    position: static;
-    display: block;
-    margin: 0 auto;
-  }
-
-
-  .workshops-stack {
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    padding: 0 20px;
-  }
-
-  .workshops-stack .work {
-    flex: 0 0 45%;
-    margin-left: 0;
-    opacity: 1;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-  }
-
-  .workshops-stack .work:hover {
-    transform: translateY(-6px) scale(1.03);
-  }
-}
-
-@media (max-width: 768px) {
-
-  .hero-detail-btn {
-    bottom: 64px;
-    transform: translateX(-50%) scale(0.92);
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    padding: 12px 22px;
-    opacity: 0.85;
-  }
-
-
-  .works {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 50px 14px 70px;
-    margin-top: 20px; 
-  }
-
-  .works .work {
-    aspect-ratio: 1 / 1; /* ⬅️ ASIL ÇÖZÜM */
-    width: 100%;
-    overflow: hidden;
-    margin-top: 20px; /* observer için nefes alanı */
-
-  }
-
-  .works .work {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .works .work img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-
-  .works-title {
-    position: relative;
-    top: auto;
-    margin-bottom: 24px;
-    font-size: 26px;
-    letter-spacing: 4px;
-    opacity: 0.45;
-    transform: none;
-    transition: opacity 0.2s ease-out;
-    margin-top: 124px;
-  }
-
- .works,
-  .works .work,
-  .works .work img {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
-
-
-}
-
-
-  .works-title {
-    position: relative;
-    top: auto;
-    margin-bottom: 24px;
-    font-size: 26px;
-    letter-spacing: 4px;
-    opacity: 0.45;
-    transform: none;
-    transition: opacity 0.2s ease-out;
-    margin-top: 124px;
-  }
-
-  .works-title.is-fading {
-    opacity: 0;
-  }
-
-  .works-title::after {
-    width: 40px;
-    margin: 16px auto 0;
-    opacity: 0.3;
-  }
-
-
-
-  .works-title.is-fading {
-    opacity: 0;
-  }
-
-  .works-title::after {
-    width: 40px;
-    margin: 16px auto 0;
-    opacity: 0.3;
-  }
-
-
-
-  .about {
-    column-count: 1;
-    max-width: 100%;
-    margin: 120px auto 80px;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-
-  .contact {
-    margin-top: 0 !important;
-  }
-
-  footer {
-    font-size: 13px;
-    padding: 15px 10px;
-  }
-
-
-  #preloader {
-    position: fixed;
-    inset: 0;
-    background: #fafafa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5000;
-  }
-
-@media (max-width: 768px) {
-  header {
-    opacity: 0;
-    pointer-events: none;
-
-  }
-}
-  body.loaded header {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.4s ease;
-  }
-
-
-@media (max-width: 768px) {
-  header .logo,
-  header .logo-container {
-    display: none !important;
-  }
-}
-
-.preloader-logo {
-  width: 64px;
-  animation: spin 0.9s linear infinite;
-}
-
-body.loaded header {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.4s ease;
-}
-
-
-  .intro-logo {
-    animation: introFadeOut 1.2s ease forwards;
-    animation-delay: 1.2s;
-  }
-
-  .logo-container {
-    position: static !important;
-
-    transition: opacity 0.5s ease;
-  }
-   
-  .fade-scroll  {
-    opacity: 1 !important;
-    transform: none !important;
-}
-
-
-.contact {
-  margin-top: 0 !important;
-}
-
-@media (max-width: 768px) {
-  .about {
-    column-count: 1;
-    max-width: 6470px;
-    margin: 120px auto 80px;
-    padding: 0 20px;
-    text-align: center;
-     columns: 1;
-    column-gap: 80px;
-  }
-  
-
-  header {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  body.loaded header {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
- 
-}
-
-
-.watercolor {
-  position: fixed;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-
-  background: radial-gradient(circle at 30% 30%,
-    rgba(255,255,255,0.6),
-    rgba(255,255,255,0.15) 20%,
-    transparent 65%);
-
-  filter: blur(6px);
-  mix-blend-mode: multiply;
-
-  animation: watercolorSpread 2.4s ease-out forwards;
-}
-
-@keyframes watercolorSpread {
-  from {
-    transform: scale(0.2);
-    opacity: 0.85;
-  }
-  to {
-    transform: scale(2.8);
-    opacity: 0;
-  }
-}
-
-
-
-
-.ink {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at center,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.15),
-    transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: inkSpread 1.6s ease-out forwards;
-  mix-blend-mode: multiply;
-  z-index: 9999;
-}
-
-
-@keyframes inkSpread {
-  from {
-    transform: scale(0.2);
-    opacity: 0.9;
-  }
-  to {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-
-
-}
-
-#preloader {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-}
-
-#preloader .preloader-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) rotate(0deg) !important;
-}
-
-
-
-
-#preloader {
-  position: fixed !important;
-  inset: 0 !important;
-  background: #fafafa !important;
-  z-index: 99999 !important;
-}
-
-=======
-#preloader .preloader-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) rotate(0deg) !important;
-}
-/* ====== HARD RESET PRELOADER (SON NOKTA) ====== */
-#preloader {
-  position: fixed !important;
-  inset: 0 !important;
-  background: #fafafa !important;
-  z-index: 99999 !important;
-}
-
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
-#preloader img,
-#preloader .preloader-logo {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 72px !important;
-  height: auto !important;
-  transform: translate(-50%, -50%) !important;
-  animation: spin 1.2s linear infinite !important;
-<<<<<<< HEAD
-}
-
-.fade-load {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.fade-load.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .9s ease, transform .9s ease;
-}
-
-.fade-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.delay-1 { transition-delay: .3s; }
-.delay-2 { transition-delay: .6s; }
-.delay-3 { transition-delay: .9s; }
-.delay-4 { transition-delay: 1.2s; }
-
-@media (hover: none) and (pointer: coarse) {
-
-  .work,
-  .work:hover,
-  .workshops-stack .work:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  .work img {
-    transform: none !important;
-  }
-=======
->>>>>>> 8bd33e22708ad531cb5672945294c43d7ac7cf9f
 }
